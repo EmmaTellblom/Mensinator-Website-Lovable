@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -48,15 +48,15 @@ const Navbar = () => {
             </Sheet>
           ) : (
             <div className="flex items-center space-x-6">
-              <Link to="/" className="text-sm font-medium hover:text-burgundy">Home</Link>
-              <Link to="/docs" className="text-sm font-medium hover:text-burgundy">Documentation</Link>
-              <Link to="/faq" className="text-sm font-medium hover:text-burgundy">FAQ</Link>
-              <Link to="/about" className="text-sm font-medium hover:text-burgundy">About</Link>
+              <Link to="/" className="text-sm font-medium hover:text-slate-700">Home</Link>
+              <Link to="/docs" className="text-sm font-medium hover:text-slate-700">Documentation</Link>
+              <Link to="/faq" className="text-sm font-medium hover:text-slate-700">FAQ</Link>
+              <Link to="/about" className="text-sm font-medium hover:text-slate-700">About</Link>
               <a 
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-sm font-medium hover:text-burgundy"
+                className="text-sm font-medium hover:text-slate-700"
               >
                 GitHub
               </a>
