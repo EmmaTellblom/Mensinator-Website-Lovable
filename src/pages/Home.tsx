@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -26,7 +25,7 @@ const Home = () => {
             No signup, no cloud storage, just privacy-focused period tracking.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-burgundy hover:bg-burgundy-700">
+            <Button size="lg" className="bg-slate-700 text-white hover:bg-slate-800">
               <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
                 Download for Android
               </a>
@@ -92,7 +91,7 @@ const Home = () => {
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-burgundy hover:text-burgundy-700 font-medium"
+                className="inline-flex items-center gap-2 text-slate-700 hover:text-slate-800 font-medium"
               >
                 <Github className="h-5 w-5" />
                 View on GitHub
@@ -106,19 +105,19 @@ const Home = () => {
               <div className="space-y-3">
                 <Link 
                   to="/docs"
-                  className="block text-sm text-burgundy hover:text-burgundy-700 font-medium"
+                  className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
                 >
                   Read Documentation →
                 </Link>
                 <Link 
                   to="/about"
-                  className="block text-sm text-burgundy hover:text-burgundy-700 font-medium"
+                  className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
                 >
                   Meet the Team →
                 </Link>
                 <Link 
                   to="/faq"
-                  className="block text-sm text-burgundy hover:text-burgundy-700 font-medium"
+                  className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
                 >
                   View FAQ →
                 </Link>
