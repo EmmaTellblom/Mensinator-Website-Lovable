@@ -9,11 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <Link to="/" className="flex items-center space-x-2">
-              <img src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png" alt="Cycle Companion Logo" className="h-8 w-8" />
-              <span className="font-bold text-xl">Cycle Companion</span>
+              <img src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png" alt="Mensinator Logo" className="h-8 w-8" />
+              <span className="font-bold text-xl">Mensinator</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              Your private period tracking companion. All data stays on your device.
+              We don't track your data - you do. Period. All data stays on your device.
             </p>
           </div>
           
@@ -42,7 +42,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-sm">Open Source</h3>
             <p className="mt-4 text-sm text-muted-foreground">
-              Cycle Companion is open source and available on GitHub. Everyone is welcome to contribute.
+              Mensinator is open source and available on GitHub. Everyone is welcome to contribute.
             </p>
             <a 
               href="https://github.com" 
@@ -57,7 +57,7 @@ const Footer = () => {
         
         <div className="mt-10 pt-6 border-t border-border">
           <p className="text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Cycle Companion. All rights reserved.
+            © {new Date().getFullYear()} Mensinator. All rights reserved.
           </p>
         </div>
       </div>

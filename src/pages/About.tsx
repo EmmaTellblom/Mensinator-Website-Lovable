@@ -3,18 +3,18 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Github, Globe, Mail } from 'lucide-react';
+import { Github, Globe, Mail, Book } from 'lucide-react';
 
 // Mock team data - replace with actual team members
 const teamMembers = [
   {
     name: "Alex Johnson",
     role: "Lead Developer",
-    bio: "Android developer with a passion for privacy-focused applications. Started Cycle Companion as a personal project.",
+    bio: "Android developer with a passion for privacy-focused applications. Started Mensinator as a personal project.",
     avatar: "",
     github: "https://github.com/alexj",
     website: "https://alexjohnson.dev",
-    email: "alex@cyclecompanion.app"
+    email: "alex@mensinator.app"
   },
   {
     name: "Samantha Lee",
@@ -23,7 +23,7 @@ const teamMembers = [
     avatar: "",
     github: "https://github.com/samlee",
     website: "",
-    email: "sam@cyclecompanion.app"
+    email: "sam@mensinator.app"
   },
   {
     name: "Jamie Zhang",
@@ -41,7 +41,7 @@ const teamMembers = [
     avatar: "",
     github: "https://github.com/taylorr",
     website: "",
-    email: "taylor@cyclecompanion.app"
+    email: "taylor@mensinator.app"
   }
 ];
 
@@ -49,7 +49,7 @@ const AboutPage = () => {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-2">About Cycle Companion</h1>
+        <h1 className="text-3xl font-bold mb-2">About Mensinator</h1>
         <p className="text-muted-foreground mb-8">
           Learn about our mission and the team behind the app.
         </p>
@@ -58,7 +58,7 @@ const AboutPage = () => {
           <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
           <div className="prose max-w-none">
             <p className="text-muted-foreground mb-4">
-              Cycle Companion was created with a simple but powerful mission: to provide a period tracking tool that prioritizes privacy above all else. In an era where personal data is often exploited, we believe your most intimate health information should remain entirely in your control.
+              Mensinator was created with a simple but powerful mission: to provide a period tracking tool that prioritizes privacy above all else. In an era where personal data is often exploited, we believe your most intimate health information should remain entirely in your control.
             </p>
             <p className="text-muted-foreground mb-4">
               We built this app on three core principles:
@@ -130,7 +130,7 @@ const AboutPage = () => {
         <section>
           <h2 className="text-2xl font-bold mb-4">Join Our Community</h2>
           <p className="text-muted-foreground mb-6">
-            Cycle Companion is an open source project, and we welcome contributions from everyone. Whether you're a developer, designer, writer, or user with feedback, there are many ways to get involved.
+            Mensinator is an open source project, and we welcome contributions from everyone. Whether you're a developer, designer, writer, or user with feedback, there are many ways to get involved.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <a 

@@ -12,13 +12,16 @@ const Home = () => {
         <div className="container mx-auto px-4 py-12 md:py-24 flex flex-col items-center text-center">
           <img 
             src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png" 
-            alt="Cycle Companion Logo" 
+            alt="Mensinator Logo" 
             className="h-24 w-24 mb-6"
           />
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            <span className="gradient-text">Cycle Companion</span>
+            <span className="gradient-text">Mensinator</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl">
+          <p className="text-xl md:text-2xl mb-4 max-w-3xl">
+            We don't track your data - you do. Period.
+          </p>
+          <p className="text-lg mb-8 max-w-3xl">
             A private period tracking app that keeps all your data on your device.
             No signup, no cloud storage, just privacy-focused period tracking.
           </p>
@@ -39,7 +42,7 @@ const Home = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Why Choose Cycle Companion?
+            Why Choose Mensinator?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center p-6 rounded-lg border border-border bg-card">
@@ -82,7 +85,7 @@ const Home = () => {
             <div className="max-w-xl">
               <h2 className="text-3xl font-bold mb-4">Open Source Project</h2>
               <p className="text-lg mb-6">
-                Cycle Companion is an open source project. We believe in transparency and community collaboration.
+                Mensinator is an open source project. We believe in transparency and community collaboration.
                 Everyone is welcome to contribute to the codebase, documentation, or translations.
               </p>
               <a 
