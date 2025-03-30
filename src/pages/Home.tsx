@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Shield, Lock, Smartphone, Github } from 'lucide-react';
+import { Shield, Lock, Smartphone, Github, Book } from 'lucide-react';
 
 const Home = () => {
   return (
@@ -36,7 +37,10 @@ const Home = () => {
               </a>
             </Button>
             <Button size="lg" variant="outline">
-              <Link to="/docs">Read Documentation</Link>
+              <Link to="/manual" className="flex items-center gap-2">
+                <Book className="h-4 w-4" />
+                User Manual
+              </Link>
             </Button>
           </div>
         </div>
@@ -108,6 +112,12 @@ const Home = () => {
                 Whether you're a developer, designer, or user with feedback, we'd love to have you as part of our community.
               </p>
               <div className="space-y-3">
+                <Link 
+                  to="/manual"
+                  className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
+                >
+                  Read User Manual →
+                </Link>
                 <Link 
                   to="/docs"
                   className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
