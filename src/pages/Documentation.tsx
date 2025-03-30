@@ -11,14 +11,14 @@ const Documentation = () => {
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold mb-2">Documentation</h1>
         <p className="text-muted-foreground mb-8">
-          Find everything you need to know about using and contributing to Cycle Companion.
+          Find everything you need to know about using and contributing to Mensinator.
         </p>
         
         <Tabs defaultValue="user-guide" className="mb-12">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="user-guide">User Guide</TabsTrigger>
             <TabsTrigger value="developer">Developer Guide</TabsTrigger>
-            <TabsTrigger value="api">API Reference</TabsTrigger>
+            {/* <TabsTrigger value="api">API Reference</TabsTrigger> */}
           </TabsList>
           
           <TabsContent value="user-guide">
@@ -26,7 +26,7 @@ const Documentation = () => {
               <CardHeader>
                 <CardTitle>User Guide</CardTitle>
                 <CardDescription>
-                  Learn how to use the Cycle Companion app effectively.
+                  Learn how to use the Mensinator app effectively.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -40,7 +40,7 @@ const Documentation = () => {
                   </p>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Open Google Play Store</li>
-                    <li>Search for "Cycle Companion"</li>
+                    <li>Search for "Mensinator"</li>
                     <li>Tap "Install" button</li>
                     <li>Open the app after installation is complete</li>
                   </ol>
@@ -52,13 +52,13 @@ const Documentation = () => {
                     Basic Setup
                   </h3>
                   <p className="text-muted-foreground mb-2">
-                    Set up your profile and preferences when first launching the app.
+                    Set up your preferences in the settings when first launching the app.
                   </p>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Choose your language preference</li>
-                    <li>Set your cycle length if known (can be changed later)</li>
+                    <li>Change colors to your liking</li>
                     <li>Customize notifications (optional)</li>
-                    <li>Set a PIN code for additional privacy (optional)</li>
+                    <li>Change calculations (optional)</li>
                   </ol>
                 </div>
 
@@ -74,7 +74,7 @@ const Documentation = () => {
               <CardHeader>
                 <CardTitle>Developer Guide</CardTitle>
                 <CardDescription>
-                  Contribute to the Cycle Companion project.
+                  Contribute to the Mensinator project.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -117,7 +117,7 @@ const Documentation = () => {
             </Card>
           </TabsContent>
           
-          <TabsContent value="api">
+          {/* <TabsContent value="api">
             <Card>
               <CardHeader>
                 <CardTitle>API Reference</CardTitle>
@@ -127,7 +127,7 @@ const Documentation = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Cycle Companion uses a local database for storage. There are no external APIs, but the internal API structure is documented here for developers who want to contribute to the project.
+                  Mensinator uses a local database for storage. There are no external APIs, but the internal API structure is documented here for developers who want to contribute to the project.
                 </p>
 
                 <Link to="/docs/api-reference" className="text-burgundy hover:text-burgundy-700 font-medium inline-block mt-4">
@@ -135,7 +135,7 @@ const Documentation = () => {
                 </Link>
               </CardContent>
             </Card>
-          </TabsContent>
+          </TabsContent> */}
         </Tabs>
         
         <div className="border-t border-border pt-8">

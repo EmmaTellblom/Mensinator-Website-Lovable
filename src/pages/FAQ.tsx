@@ -16,11 +16,11 @@ const FAQPage = () => {
       questions: [
         {
           q: "Is my data really kept only on my device?",
-          a: "Yes, absolutely. Cycle Companion is designed with privacy as the top priority. All your data is stored locally on your device and never leaves it without your explicit consent. There are no servers, no cloud storage, and no data collection. This approach ensures your most personal information remains completely private."
+          a: "Yes, absolutely. Mensinator is designed with privacy as the top priority. All your data is stored locally on your device and never leaves it without your explicit consent. There are no servers, no cloud storage, and no data collection. This approach ensures your most personal information remains completely private."
         },
         {
           q: "What happens to my data if I uninstall the app?",
-          a: "When you uninstall Cycle Companion, all your data is completely removed from your device. We recommend exporting your data first if you want to keep a backup. You can do this from the Settings > Export Data menu within the app."
+          a: "When you uninstall Mensinator, all your data is completely removed from your device. We recommend exporting your data first if you want to keep a backup. You can do this from the Settings > Export Data menu within the app."
         },
         {
           q: "Does the app require any permissions?",
@@ -33,15 +33,15 @@ const FAQPage = () => {
       questions: [
         {
           q: "How do I track my period?",
-          a: "To track your period, simply open the app and tap on the calendar view. You can then mark the days when your period starts and ends. The app will automatically calculate your cycle length and predict future periods based on your historical data."
+          a: "To track your period, simply open the app and tap on the calendar view. You can then mark the days when your period days. The app will automatically calculate your cycle length and predict future periods based on your historical data."
         },
         {
           q: "Can I track symptoms and moods?",
-          a: "Yes, Cycle Companion allows you to track various symptoms, moods, and other factors that might be related to your cycle. You can customize which symptoms you want to track in the Settings > Tracking Options menu."
+          a: "Yes, Mensinator allows you to track various symptoms, moods, and other factors that might be related to your cycle. You can customize which symptoms and moods you want to track in the Symptoms menu."
         },
         {
           q: "Is there a way to backup my data?",
-          a: "Yes, you can export your data to a local file on your device. Go to Settings > Export Data to create a backup. This file is stored in your Downloads folder and can be imported back into the app later if needed."
+          a: "Yes, you can export your data to a local file on your device. Go to Settings > Export Data to create a backup. This file is stored in your Documents folder and can be imported back into the app later if needed."
         }
       ]
     },
@@ -50,11 +50,11 @@ const FAQPage = () => {
       questions: [
         {
           q: "Does the app work offline?",
-          a: "Yes, Cycle Companion works completely offline. Since all data is stored locally on your device, you don't need an internet connection to use any feature of the app."
+          a: "Yes, Mensinator works completely offline. Since all data is stored locally on your device, you don't need an internet connection to use any feature of the app."
         },
         {
           q: "What devices are supported?",
-          a: "Cycle Companion is currently available for Android devices running Android 6.0 (Marshmallow) or higher. We're considering developing an iOS version in the future."
+          a: "Mensinator is currently available for Android devices running Android 6.0 (Marshmallow) or higher. We're considering developing an iOS version in the future."
         },
         {
           q: "How can I report bugs or request features?",
@@ -72,7 +72,7 @@ const FAQPage = () => {
           <h1 className="text-3xl font-bold">Frequently Asked Questions</h1>
         </div>
         <p className="text-muted-foreground mb-8">
-          Find answers to common questions about Cycle Companion.
+          Find answers to common questions about Mensinator.
         </p>
         
         <div className="space-y-8">

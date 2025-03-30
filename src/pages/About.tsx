@@ -4,45 +4,48 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Github, Globe, Mail, Book } from 'lucide-react';
+import { count } from 'console';
 
-// Mock team data - replace with actual team members
 const teamMembers = [
   {
-    name: "Alex Johnson",
-    role: "Lead Developer",
-    bio: "Android developer with a passion for privacy-focused applications. Started Mensinator as a personal project.",
+    name: "Emma Tellblom",
+    role: "Founder & Jack of All Trades",
+    country: "Sweden",
+    bio: "Founder of Mensinator as a favor to her friend. Handles a little bit of everything, hates design decisions.",
     avatar: "",
-    github: "https://github.com/alexj",
-    website: "https://alexjohnson.dev",
-    email: "alex@mensinator.app"
+    github: "https://github.com/EmmaTellblom/",
+    //website: "https://alexjohnson.dev",
+    //email: "mensinator.app@gmail.com"
   },
   {
-    name: "Samantha Lee",
-    role: "UI/UX Designer",
-    bio: "Designer focused on creating accessible and intuitive interfaces for health applications.",
+    name: "Carsten Hagemann",
+    role: "Lead Backend Developer",
+    country: "Germany",
+    bio: "Strong believer in privacy and open source. Ensures the app remains strucutred and works as intended.",
     avatar: "",
-    github: "https://github.com/samlee",
-    website: "",
-    email: "sam@mensinator.app"
-  },
-  {
-    name: "Jamie Zhang",
-    role: "Backend Developer",
-    bio: "Privacy advocate and database specialist. Ensures all data remains secure and local to the device.",
-    avatar: "",
-    github: "https://github.com/jamiezhang",
-    website: "https://jamiezhang.io",
-    email: ""
-  },
-  {
-    name: "Taylor Rivera",
-    role: "Documentation Lead",
-    bio: "Technical writer with experience in open source projects. Maintains the app's documentation and user guides.",
-    avatar: "",
-    github: "https://github.com/taylorr",
-    website: "",
-    email: "taylor@mensinator.app"
+    github: "https://github.com/carstenhag",
+    //website: "",
+    //email: "sam@mensinator.app"
   }
+  // ,
+  // {
+  //   name: "Jamie Zhang",
+  //   role: "Backend Developer",
+  //   bio: "Privacy advocate and database specialist. Ensures all data remains secure and local to the device.",
+  //   avatar: "",
+  //   github: "https://github.com/jamiezhang",
+  //   website: "https://jamiezhang.io",
+  //   email: ""
+  // },
+  // {
+  //   name: "Taylor Rivera",
+  //   role: "Documentation Lead",
+  //   bio: "Technical writer with experience in open source projects. Maintains the app's documentation and user guides.",
+  //   avatar: "",
+  //   github: "https://github.com/taylorr",
+  //   website: "",
+  //   email: "taylor@mensinator.app"
+  // }
 ];
 
 const AboutPage = () => {
@@ -111,16 +114,16 @@ const AboutPage = () => {
                       <Github className="h-5 w-5" />
                     </a>
                   )}
-                  {member.website && (
+                  {/* {member.website && (
                     <a href={member.website} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
                       <Globe className="h-5 w-5" />
                     </a>
-                  )}
-                  {member.email && (
+                  )} */}
+                  {/* {member.email && (
                     <a href={`mailto:${member.email}`} className="text-muted-foreground hover:text-foreground">
                       <Mail className="h-5 w-5" />
                     </a>
-                  )}
+                  )} */}
                 </CardFooter>
               </Card>
             ))}
@@ -134,7 +137,7 @@ const AboutPage = () => {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/EmmaTellblom/Mensinator" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center p-4 bg-card rounded-lg border border-border hover:bg-accent/20 transition-colors"
