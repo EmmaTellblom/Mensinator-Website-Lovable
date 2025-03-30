@@ -51,7 +51,7 @@ const UserManual = () => {
                       <li>Open the app after installation is complete</li>
                     </ol>
                     <p className="text-sm text-muted-foreground">
-                      Note: Mensinator requires Android 6.0 (Marshmallow) or higher.
+                      Note: Mensinator requires Android 8.0 (Oreo) or higher.
                     </p>
                   </div>
                 </div>
@@ -92,9 +92,6 @@ const UserManual = () => {
                       <li>Set up notifications (optional)</li>
                       <li>Configure your cycle calculation preferences</li>
                     </ol>
-                    <p className="text-sm text-muted-foreground">
-                      Tip: If you already know your average cycle length, you can enter it in Settings to improve predictions right from the start.
-                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -123,17 +120,22 @@ const UserManual = () => {
                         <strong>Recording your period:</strong>
                         <ul className="list-disc pl-5 mt-1">
                           <li>Tap on a day in the calendar view</li>
-                          <li>Select "Period" from the options</li>
-                          <li>Choose flow intensity if desired (light, medium, heavy)</li>
-                          <li>Tap "Save"</li>
+                          <li>Click the button "Period"</li>
+                          <li>The days should now be shown in the calendar as period days</li>
                         </ul>
                       </li>
                       <li>
                         <strong>Editing entries:</strong>
                         <ul className="list-disc pl-5 mt-1">
                           <li>Tap on a day with an existing entry</li>
-                          <li>Modify any information as needed</li>
-                          <li>Tap "Save" to update or "Delete" to remove the entry</li>
+                          <li>Click on period button to remove the entry</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <strong>Adding ovulation:</strong>
+                        <ul className="list-disc pl-5 mt-1">
+                          <li>Tap on a day where you want to add ovulation</li>
+                          <li>Click on the button "ovulation"</li>
                         </ul>
                       </li>
                     </ol>
@@ -154,16 +156,14 @@ const UserManual = () => {
                         <strong>Recording symptoms:</strong>
                         <ul className="list-disc pl-5 mt-1">
                           <li>Tap on a day in the calendar view</li>
-                          <li>Select "Symptoms" tab</li>
+                          <li>Click on the button "Symptoms"</li>
                           <li>Choose from options like cramps, headache, fatigue, etc.</li>
-                          <li>Rate intensity if applicable</li>
-                          <li>Tap "Save"</li>
                         </ul>
                       </li>
                       <li>
                         <strong>Customizing symptom options:</strong>
                         <ul className="list-disc pl-5 mt-1">
-                          <li>Go to Settings > Symptoms</li>
+                          <li>Go to Symptoms in the bottom menu</li>
                           <li>Enable or disable symptom types</li>
                           <li>Add custom symptoms specific to your needs</li>
                         </ul>
@@ -188,12 +188,12 @@ const UserManual = () => {
                       <li>
                         <strong>No account required:</strong> Use the app without creating an account or providing personal information
                       </li>
-                      <li>
+                      {/* <li>
                         <strong>App lock:</strong> Add an extra layer of security by enabling the app lock feature in Settings
                       </li>
                       <li>
                         <strong>Privacy mode:</strong> Quickly hide sensitive information when in public
-                      </li>
+                      </li> */}
                       <li>
                         <strong>Data export/import:</strong> Control your data by exporting it for backup or importing it to a new device
                       </li>
@@ -222,15 +222,15 @@ const UserManual = () => {
                     <AccordionContent className="space-y-4">
                       <p>Mensinator allows you to export your data for backup or transfer to another device:</p>
                       <ol className="list-decimal pl-5 space-y-2">
-                        <li>Go to Settings > Data Management</li>
-                        <li>Tap "Export Data"</li>
-                        <li>Choose where to save the export file (e.g., Downloads folder, cloud storage)</li>
-                        <li>To import, go to Settings > Data Management on the new device</li>
+                        <li>Go to Settings/Backup</li>
+                        <li>Tap "Export"</li>
+                        <li>The file will be saved to the Document Directory</li>
+                        <li>To import, go to Settings/Backup on the new device</li>
                         <li>Tap "Import Data" and select your backup file</li>
                       </ol>
-                      <p className="text-sm text-muted-foreground">
+                      {/* <p className="text-sm text-muted-foreground">
                         Note: Export files are encrypted for your privacy. It's recommended to backup your data regularly.
-                      </p>
+                      </p> */}
                     </AccordionContent>
                   </AccordionItem>
                   
@@ -241,11 +241,11 @@ const UserManual = () => {
                     <AccordionContent className="space-y-4">
                       <p>Mensinator calculates predictions based on your historical data, but you can customize how this works:</p>
                       <ol className="list-decimal pl-5 space-y-2">
-                        <li>Go to Settings > Calculation Settings</li>
+                        <li>Go to Settings/Other settings</li>
                         <li>Choose the number of cycles to include in calculations (3-12 recommended)</li>
-                        <li>Set your preferred cycle length if you want to override the automatic calculation</li>
+                        {/* <li>Set your preferred cycle length if you want to override the automatic calculation</li>
                         <li>Enable/disable fertility window calculations</li>
-                        <li>Adjust notification timing for upcoming periods</li>
+                        <li>Adjust notification timing for upcoming periods</li> */}
                       </ol>
                       <p>
                         The more consistent data you enter, the more accurate predictions will become over time.
@@ -255,16 +255,16 @@ const UserManual = () => {
                   
                   <AccordionItem value="item-3">
                     <AccordionTrigger className="text-left font-medium">
-                      Health Insights
+                      Advanced Period Predictions
                     </AccordionTrigger>
                     <AccordionContent className="space-y-4">
-                      <p>After tracking for several cycles, you can access insights about your patterns:</p>
+                      <p>Regular predictions are calculated according to the average cycle length, but there is an option to predict according to the luteral cycle. To use this feature you must track your ovulation in the app and have at least 3 cycles recorded.</p>
                       <ol className="list-decimal pl-5 space-y-2">
-                        <li>Tap the "Statistics" or "Insights" tab from the main view</li>
-                        <li>View average cycle length and period duration</li>
-                        <li>See patterns in symptoms correlated with cycle phases</li>
+                        <li>Go to settings/Other settings</li>
+                        <li>Turn on Luteal Phase Calculations</li>
+                        {/* <li>See patterns in symptoms correlated with cycle phases</li>
                         <li>Access a history of irregular cycles if applicable</li>
-                        <li>Export statistics for sharing with healthcare providers</li>
+                        <li>Export statistics for sharing with healthcare providers</li> */}
                       </ol>
                       <p className="text-sm text-muted-foreground">
                         Important: Mensinator is designed for informational purposes only and should not replace medical advice.
@@ -273,6 +273,25 @@ const UserManual = () => {
                   </AccordionItem>
                   
                   <AccordionItem value="item-4">
+                    <AccordionTrigger className="text-left font-medium">
+                      Health Insights
+                    </AccordionTrigger>
+                    <AccordionContent className="space-y-4">
+                      <p>After tracking for several cycles, you can access insights about your patterns:</p>
+                      <ol className="list-decimal pl-5 space-y-2">
+                        <li>Tap the "Statistics" in the bottom menu</li>
+                        <li>View average cycle length and period duration</li>
+                        {/* <li>See patterns in symptoms correlated with cycle phases</li>
+                        <li>Access a history of irregular cycles if applicable</li>
+                        <li>Export statistics for sharing with healthcare providers</li> */}
+                      </ol>
+                      <p className="text-sm text-muted-foreground">
+                        Important: Mensinator is designed for informational purposes only and should not replace medical advice.
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  {/* <AccordionItem value="item-4">
                     <AccordionTrigger className="text-left font-medium">
                       Calendar Integration
                     </AccordionTrigger>
@@ -289,7 +308,7 @@ const UserManual = () => {
                         Privacy note: When using calendar integration, period information will be visible to anyone who can access your calendar. Consider using a private calendar for this integration.
                       </p>
                     </AccordionContent>
-                  </AccordionItem>
+                  </AccordionItem> */}
                 </Accordion>
               </CardContent>
             </Card>
@@ -306,7 +325,7 @@ const UserManual = () => {
               </CardHeader>
               <CardContent>
                 <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="troubleshoot-1">
+                  {/* <AccordionItem value="troubleshoot-1">
                     <AccordionTrigger className="text-left font-medium">
                       The app is crashing or freezing
                     </AccordionTrigger>
@@ -317,15 +336,15 @@ const UserManual = () => {
                         <li>Restart your device</li>
                         <li>Make sure you have the latest version of the app installed</li>
                         <li>Check if your device meets the minimum requirements (Android 6.0+)</li>
-                        <li>Clear the app cache (Settings > Apps > Mensinator > Storage > Clear Cache)</li>
+                        <li>Clear the app cache (Settings/Apps/Mensinator/Storage/Clear Cache)</li>
                       </ol>
                       <p>
                         If the issue persists, you can report it on our GitHub repository.
                       </p>
                     </AccordionContent>
-                  </AccordionItem>
+                  </AccordionItem> */}
                   
-                  <AccordionItem value="troubleshoot-2">
+                  {/* <AccordionItem value="troubleshoot-2">
                     <AccordionTrigger className="text-left font-medium">
                       I lost all my data
                     </AccordionTrigger>
@@ -341,7 +360,7 @@ const UserManual = () => {
                         Prevention tip: Set up regular automatic backups in Settings > Data Management to avoid data loss in the future.
                       </p>
                     </AccordionContent>
-                  </AccordionItem>
+                  </AccordionItem> */}
                   
                   <AccordionItem value="troubleshoot-3">
                     <AccordionTrigger className="text-left font-medium">
@@ -352,9 +371,9 @@ const UserManual = () => {
                       <ol className="list-decimal pl-5 space-y-2">
                         <li>Ensure you've tracked at least 3 complete cycles for better predictions</li>
                         <li>Check that all your period start dates are correctly marked</li>
-                        <li>Go to Settings > Calculation Settings to adjust how predictions are calculated</li>
+                        <li>Go to Settings/Other Settings to adjust how predictions are calculated</li>
                         <li>If your cycles are irregular, predictions may naturally be less accurate</li>
-                        <li>Consider using manual cycle length override if your cycles are consistent but different from what the app calculates</li>
+                        {/* <li>Consider using manual cycle length override if your cycles are consistent but different from what the app calculates</li> */}
                       </ol>
                       <p>
                         Remember that predictions are estimates based on past data and natural variations in cycles can occur.
@@ -369,7 +388,7 @@ const UserManual = () => {
                     <AccordionContent className="space-y-4">
                       <p>If you're not receiving notifications about upcoming periods:</p>
                       <ol className="list-decimal pl-5 space-y-2">
-                        <li>Go to Settings > Notifications and ensure they're enabled</li>
+                        <li>Go to Settings/Reminders and check that you have entered how many days in advance you want to receive notifications</li>
                         <li>Check your device notification settings for Mensinator</li>
                         <li>Make sure battery optimization is disabled for Mensinator</li>
                         <li>Verify that you haven't muted notifications in your device settings</li>
