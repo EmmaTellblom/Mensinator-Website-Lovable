@@ -18,9 +18,9 @@ const teamMembers = [
   },
   {
     name: "Carsten Hagemann",
-    role: "Lead Developer",
+    role: "Android Developer",
     country: "Germany",
-    bio: "Strong believer in privacy and open source. Ensures the app remains strucutred and works as intended.",
+    bio: "Strong believer in privacy and open source. Ensures the app remains structured and works as intended.",
     avatar: "",
     github: "https://github.com/carstenhag",
     //website: "",
