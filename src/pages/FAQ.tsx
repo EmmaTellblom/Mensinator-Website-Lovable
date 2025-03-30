@@ -33,7 +33,7 @@ const FAQPage = () => {
       questions: [
         {
           q: "How do I track my period?",
-          a: "To track your period, simply open the app and tap on the calendar view. You can then mark the days when your period days. The app will automatically calculate your cycle length and predict future periods based on your historical data."
+          a: "To track your period, simply open the app and tap on the calendar view. You can then mark the days when you have had your period and select 'Period'. The app will automatically calculate your cycle length and predict future periods based on your historical data. You can also add days with symptoms and ovulation to help with tracking."
         },
         {
           q: "Can I track symptoms and moods?",
@@ -109,7 +109,7 @@ const FAQPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
-              href="https://github.com/issues" 
+              href="https://github.com/EmmaTellblom/Mensinator/issues" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-burgundy hover:text-burgundy-700 font-medium"

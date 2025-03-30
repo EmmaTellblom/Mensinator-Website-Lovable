@@ -148,7 +148,7 @@ const Documentation = () => {
               View FAQ →
             </Link>
             <a 
-              href="https://github.com/issues" 
+              href="https://github.com/EmmaTellblom/Mensinator/issues" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-burgundy hover:text-burgundy-700 font-medium"

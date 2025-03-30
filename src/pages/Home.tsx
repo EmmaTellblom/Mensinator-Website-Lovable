@@ -26,8 +26,13 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="bg-slate-700 text-white hover:bg-slate-800">
-              <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+              <a href="https://play.google.com/store/apps/details?id=com.mensinator.app&hl=en" target="_blank" rel="noopener noreferrer">
                 Download for Android
+              </a>
+            </Button>
+            <Button size="lg" className="bg-slate-700 text-white hover:bg-slate-800">
+              <a href="https://f-droid.org/en/packages/com.mensinator.app/" target="_blank" rel="noopener noreferrer">
+                Download from FDroid
               </a>
             </Button>
             <Button size="lg" variant="outline">
@@ -88,7 +93,7 @@ const Home = () => {
                 Everyone is welcome to contribute to the codebase, documentation, or translations.
               </p>
               <a 
-                href="https://github.com" 
+                href="https://github.com/EmmaTellblom/Mensinator" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-slate-700 hover:text-slate-800 font-medium"
