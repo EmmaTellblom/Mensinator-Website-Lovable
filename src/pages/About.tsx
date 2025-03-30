@@ -3,8 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Github, Globe, Mail, Book } from 'lucide-react';
-import { count } from 'console';
+import { Github, Globe, Mail, Book, Flag } from 'lucide-react';
 
 const teamMembers = [
   {
@@ -106,7 +105,11 @@ const AboutPage = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{member.bio}</p>
+                  <p className="text-sm text-muted-foreground mb-2">{member.bio}</p>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Flag className="h-4 w-4 mr-1" />
+                    <span>{member.country}</span>
+                  </div>
                 </CardContent>
                 <CardFooter className="flex gap-4">
                   {member.github && (
