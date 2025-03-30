@@ -58,7 +58,7 @@ const UserManual = () => {
                 
                 <Separator />
                 
-                <div>
+                {/* <div>
                   <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
                     <Smartphone className="h-5 w-5 text-slate-700" />
                     First Launch
@@ -74,7 +74,7 @@ const UserManual = () => {
                       Mensinator doesn't require any account creation or sign-up. You can start using it immediately without providing any personal information.
                     </p>
                   </div>
-                </div>
+                </div> */}
                 
                 <Separator />
                 
@@ -121,7 +121,7 @@ const UserManual = () => {
                         <ul className="list-disc pl-5 mt-1">
                           <li>Tap on a day in the calendar view</li>
                           <li>Click the button "Period"</li>
-                          <li>The days should now be shown in the calendar as period days</li>
+                          <li>The day(s) should now be shown in the calendar as period day(s)</li>
                         </ul>
                       </li>
                       <li>
@@ -129,13 +129,6 @@ const UserManual = () => {
                         <ul className="list-disc pl-5 mt-1">
                           <li>Tap on a day with an existing entry</li>
                           <li>Click on period button to remove the entry</li>
-                        </ul>
-                      </li>
-                      <li>
-                        <strong>Adding ovulation:</strong>
-                        <ul className="list-disc pl-5 mt-1">
-                          <li>Tap on a day where you want to add ovulation</li>
-                          <li>Click on the button "ovulation"</li>
                         </ul>
                       </li>
                     </ol>
