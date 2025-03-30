@@ -58,26 +58,6 @@ const UserManual = () => {
                 
                 <Separator />
                 
-                {/* <div>
-                  <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
-                    <Smartphone className="h-5 w-5 text-slate-700" />
-                    First Launch
-                  </h3>
-                  <div className="space-y-4">
-                    <p>When you first open Mensinator, you'll be greeted with a brief introduction to the app's privacy features and functionality:</p>
-                    <ol className="list-decimal pl-5 space-y-2">
-                      <li>Read through the welcome screens to understand how Mensinator protects your privacy</li>
-                      <li>Decide whether to allow optional permissions (if prompted)</li>
-                      <li>You'll be taken to the main calendar view where you can start tracking</li>
-                    </ol>
-                    <p>
-                      Mensinator doesn't require any account creation or sign-up. You can start using it immediately without providing any personal information.
-                    </p>
-                  </div>
-                </div> */}
-                
-                <Separator />
-                
                 <div>
                   <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
                     <Settings className="h-5 w-5 text-slate-700" />
@@ -136,6 +116,34 @@ const UserManual = () => {
                 </div>
                 
                 <Separator />
+
+                <div>
+                  <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+                    <LineChart className="h-5 w-5 text-slate-700" />
+                    Ovulation Tracking
+                  </h3>
+                  <div className="space-y-4">
+                    <p>Track your ovulation date:</p>
+                    <ol className="list-decimal pl-5 space-y-3">
+                      <li>
+                        <strong>Add ovulation:</strong>
+                        <ul className="list-disc pl-5 mt-1">
+                          <li>Tap on a day in the calendar view</li>
+                          <li>Click on the button "Ovulation"</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <strong>Remove ovulation:</strong>
+                        <ul className="list-disc pl-5 mt-1">
+                          <li>Tap on the ovulation date in the calendar view</li>
+                          <li>Click on the button "Ovulation"</li>
+                        </ul>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                
+                <Separator />
                 
                 <div>
                   <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
@@ -150,7 +158,7 @@ const UserManual = () => {
                         <ul className="list-disc pl-5 mt-1">
                           <li>Tap on a day in the calendar view</li>
                           <li>Click on the button "Symptoms"</li>
-                          <li>Choose from options like cramps, headache, fatigue, etc.</li>
+                          <li>Choose from options like flow or your own custom symptoms.</li>
                         </ul>
                       </li>
                       <li>
@@ -181,12 +189,6 @@ const UserManual = () => {
                       <li>
                         <strong>No account required:</strong> Use the app without creating an account or providing personal information
                       </li>
-                      {/* <li>
-                        <strong>App lock:</strong> Add an extra layer of security by enabling the app lock feature in Settings
-                      </li>
-                      <li>
-                        <strong>Privacy mode:</strong> Quickly hide sensitive information when in public
-                      </li> */}
                       <li>
                         <strong>Data export/import:</strong> Control your data by exporting it for backup or importing it to a new device
                       </li>
