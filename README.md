@@ -1,69 +1,32 @@
-# Welcome to your Lovable project
+# Mensinator Website
 
-## Project info
+This is the official website for **Mensinator**, built with [Lovable](https://lovable.so/), a simple and privacy-focused website builder.
 
-**URL**: https://lovable.dev/projects/15e5b362-1e6a-4eeb-be7d-2d0662045050
+## About Mensinator
 
-## How can I edit this code?
+Mensinator is an open-source, privacy-first period tracking app that puts you in control of your data. No tracking, no ads—just a simple, powerful tool for managing your cycle.
 
-There are several ways of editing your application.
+## Features
+- Built using **Lovable**, ensuring an easy-to-manage and lightweight site
+- Privacy-focused, aligning with Mensinator's core philosophy
+- Clean and minimal design
+- Optimized for performance and accessibility
 
-**Use Lovable**
+## Development
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/15e5b362-1e6a-4eeb-be7d-2d0662045050) and start prompting.
+### Contributing
+Mensinator is an open-source project, and contributions to the website are welcome! If you'd like to make changes:
+1. Fork this repository
+2. Create a new branch for your changes
+3. Make your edits and commit them
+4. Open a Pull Request (PR) for review
 
-Changes made via Lovable will be committed automatically to this repo.
+For major changes, please open an issue first to discuss your proposal.
 
-**Use your preferred IDE**
+### Custom Code
+For advanced modifications, custom HTML, CSS, and JavaScript can be added within the codebase.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## License
+This website's content follows the same principles as Mensinator—open and free. However, Lovable's platform terms apply where applicable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/15e5b362-1e6a-4eeb-be7d-2d0662045050) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Visit the website at https://mensinator.app/
