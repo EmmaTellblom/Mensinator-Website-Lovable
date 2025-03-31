@@ -1,6 +1,6 @@
 # Mensinator Website
 
-This is the official website for **Mensinator**, built with [Lovable](https://lovable.so/), a simple and privacy-focused website builder.
+This is the official website for **Mensinator**, built with [Lovable](https://lovable.so/).
 
 ## About Mensinator
 
