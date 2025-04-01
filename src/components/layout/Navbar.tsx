@@ -36,7 +36,7 @@ const Navbar = () => {
                     <Book className="h-4 w-4" />
                     User Manual
                   </Link>
-                  <Link to="/docs" className="text-lg font-medium px-4 py-2 rounded-md hover:bg-accent">Documentation</Link>
+                  <Link to="/docs" className="text-lg font-medium px-4 py-2 rounded-md hover:bg-accent">Development</Link>
                   <Link to="/faq" className="text-lg font-medium px-4 py-2 rounded-md hover:bg-accent">FAQ</Link>
                   <Link to="/about" className="text-lg font-medium px-4 py-2 rounded-md hover:bg-accent">About</Link>
                   <a 
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <Book className="h-3.5 w-3.5" />
                 User Manual
               </Link>
-              <Link to="/docs" className="text-sm font-medium hover:text-slate-700">Documentation</Link>
+              <Link to="/docs" className="text-sm font-medium hover:text-slate-700">Development</Link>
               <Link to="/faq" className="text-sm font-medium hover:text-slate-700">FAQ</Link>
               <Link to="/about" className="text-sm font-medium hover:text-slate-700">About</Link>
               <a 
