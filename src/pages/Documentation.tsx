@@ -116,7 +116,7 @@ const Documentation = () => {
                     Translations
                   </h3>
                   <p className="text-muted-foreground mb-2">
-                    Know a language that the app doesn't support? Help us translate it!
+                    Know a language that the app doesn't support? Help us translate it! All our translations are community-driven, and we welcome any help we can get.
                   </p>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Create a new folder in Mensinator/app/src/main/res called values-XX where XX is the language code.</li>
