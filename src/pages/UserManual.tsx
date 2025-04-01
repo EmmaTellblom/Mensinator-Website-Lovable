@@ -43,9 +43,9 @@ const UserManual = () => {
                     Installation
                   </h3>
                   <div className="space-y-4">
-                    <p>Mensinator is available on Android devices through the Google Play Store and F-Droid:</p>
+                    <p>Mensinator is available on Android devices through the Google Play Store, F-Droid and IzzyOnDroid:</p>
                     <ol className="list-decimal pl-5 space-y-2">
-                      <li>Open Google Play Store or F-Droid on your Android device</li>
+                      <li>Open Google Play Store, F-Droid or IzzyOnDroid on your Android device</li>
                       <li>Search for "Mensinator"</li>
                       <li>Tap "Install" button</li>
                       <li>Open the app after installation is complete</li>
