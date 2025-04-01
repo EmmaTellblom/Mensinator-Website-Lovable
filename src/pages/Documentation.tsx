@@ -14,7 +14,7 @@ const Documentation = () => {
           Find everything you need to know about contributing to Mensinator.
         </p>
         
-        <Tabs defaultValue="user-guide" className="mb-12">
+        <Tabs defaultValue="developer" className="mb-12">
           <TabsList className="grid w-full grid-cols-3">
             {/* <TabsTrigger value="user-guide">User Guide</TabsTrigger> */}
             <TabsTrigger value="developer">Developer Guide</TabsTrigger>
