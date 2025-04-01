@@ -9,19 +9,19 @@ const Documentation = () => {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-2">Documentation</h1>
+        <h1 className="text-3xl font-bold mb-2">Development</h1>
         <p className="text-muted-foreground mb-8">
-          Find everything you need to know about using and contributing to Mensinator.
+          Find everything you need to know about contributing to Mensinator.
         </p>
         
         <Tabs defaultValue="user-guide" className="mb-12">
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="user-guide">User Guide</TabsTrigger>
+            {/* <TabsTrigger value="user-guide">User Guide</TabsTrigger> */}
             <TabsTrigger value="developer">Developer Guide</TabsTrigger>
             {/* <TabsTrigger value="api">API Reference</TabsTrigger> */}
           </TabsList>
           
-          <TabsContent value="user-guide">
+          {/* <TabsContent value="user-guide">
             <Card>
               <CardHeader>
                 <CardTitle>User Guide</CardTitle>
@@ -67,7 +67,7 @@ const Documentation = () => {
                 </Link>
               </CardContent>
             </Card>
-          </TabsContent>
+          </TabsContent> */}
           
           <TabsContent value="developer">
             <Card>
@@ -110,9 +110,9 @@ const Documentation = () => {
                   </ol>
                 </div>
 
-                <Link to="/docs/developer-guide" className="text-burgundy hover:text-burgundy-700 font-medium inline-block mt-4">
+                {/* <Link to="/docs/developer-guide" className="text-burgundy hover:text-burgundy-700 font-medium inline-block mt-4">
                   View full developer guide →
-                </Link>
+                </Link> */}
               </CardContent>
             </Card>
           </TabsContent>
