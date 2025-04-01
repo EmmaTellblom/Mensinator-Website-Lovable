@@ -16,7 +16,7 @@ const FAQPage = () => {
       questions: [
         {
           q: "Is my data really kept only on my device?",
-          a: "Yes, absolutely. Mensinator is designed with privacy as the top priority. All your data is stored locally on your device and never leaves it without your explicit consent. There are no servers, no cloud storage, and no data collection. This approach ensures your most personal information remains completely private."
+          a: "Yes, absolutely. Mensinator is designed with privacy as the top priority. All your data is stored locally on your device and never leaves it (unless you choose to export it). There are no servers, no cloud storage, and no data collection. This approach ensures your most personal information remains completely private."
         },
         {
           q: "What happens to my data if I uninstall the app?",
@@ -28,23 +28,23 @@ const FAQPage = () => {
         }
       ]
     },
-    {
-      category: "Usage",
-      questions: [
-        {
-          q: "How do I track my period?",
-          a: "To track your period, simply open the app and tap on the calendar view. You can then mark the days when you have had your period and select 'Period'. The app will automatically calculate your cycle length and predict future periods based on your historical data. You can also add days with symptoms and ovulation to help with tracking."
-        },
-        {
-          q: "Can I track symptoms and moods?",
-          a: "Yes, Mensinator allows you to track various symptoms, moods, and other factors that might be related to your cycle. You can customize which symptoms and moods you want to track in the Symptoms menu."
-        },
-        {
-          q: "Is there a way to backup my data?",
-          a: "Yes, you can export your data to a local file on your device. Go to Settings > Export Data to create a backup. This file is stored in your Documents folder and can be imported back into the app later if needed."
-        }
-      ]
-    },
+    // {
+    //   category: "Usage",
+    //   questions: [
+    //     {
+    //       q: "How do I track my period?",
+    //       a: "To track your period, simply open the app and tap on the calendar view. You can then mark the days when you have had your period and select 'Period'. The app will automatically calculate your cycle length and predict future periods based on your historical data. You can also add days with symptoms and ovulation to help with tracking."
+    //     },
+    //     {
+    //       q: "Can I track symptoms and moods?",
+    //       a: "Yes, Mensinator allows you to track various symptoms, moods, and other factors that might be related to your cycle. You can customize which symptoms and moods you want to track in the Symptoms menu."
+    //     },
+    //     {
+    //       q: "Is there a way to backup my data?",
+    //       a: "Yes, you can export your data to a local file on your device. Go to Settings > Export Data to create a backup. This file is stored in your Documents folder and can be imported back into the app later if needed."
+    //     }
+    //   ]
+    // },
     {
       category: "Technical",
       questions: [
