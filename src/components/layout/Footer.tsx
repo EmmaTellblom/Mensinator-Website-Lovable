@@ -22,7 +22,7 @@ const Footer = () => {
               <h3 className="font-semibold text-sm">Navigation</h3>
               <ul className="mt-4 space-y-2 text-sm">
                 <li><Link to="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
-                <li><Link to="/docs" className="text-muted-foreground hover:text-primary">Documentation</Link></li>
+                <li><Link to="/docs" className="text-muted-foreground hover:text-primary">Development</Link></li>
                 <li><Link to="/faq" className="text-muted-foreground hover:text-primary">FAQ</Link></li>
                 <li><Link to="/about" className="text-muted-foreground hover:text-primary">About</Link></li>
               </ul>
