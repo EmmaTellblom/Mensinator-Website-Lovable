@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="font-bold text-xl">Mensinator</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              We don't track your data - you do. Period. All data stays on your device.
+              We don't track your data - you do. Period.
             </p>
           </div>
           
@@ -28,15 +28,15 @@ const Footer = () => {
               </ul>
             </div>
             
-            <div>
+            {/* <div>
               <h3 className="font-semibold text-sm">Resources</h3>
               <ul className="mt-4 space-y-2 text-sm">
-                <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">GitHub</a></li>
-                <li><a href="https://github.com/issues" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">Issues</a></li>
+                <li><a href="https://github.com/EmmaTellblom/Mensinator/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">GitHub</a></li>
+                <li><a href="https://github.com/EmmaTellblom/Mensinator//issues" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">Issues</a></li>
                 <li><a href="https://github.com/contributing" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">Contributing</a></li>
                 <li><a href="/privacy-policy" className="text-muted-foreground hover:text-primary">Privacy Policy</a></li>
               </ul>
-            </div>
+            </div> */}
           </div>
           
           <div>
@@ -45,7 +45,7 @@ const Footer = () => {
               Mensinator is open source and available on GitHub. Everyone is welcome to contribute.
             </p>
             <a 
-              href="https://github.com" 
+              href="https://github.com/EmmaTellblom/Mensinator/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center text-sm font-medium text-burgundy hover:text-burgundy-800"
