@@ -110,6 +110,22 @@ const Documentation = () => {
                   </ol>
                 </div>
 
+                <div>
+                  <h3 className="text-lg font-medium mb-2 flex items-center gap-2">
+                    <Users className="h-5 w-5 text-burgundy" />
+                    Translations
+                  </h3>
+                  <p className="text-muted-foreground mb-2">
+                    Know a language that the app doesn't support? Help us translate it!
+                  </p>
+                  <ol className="list-decimal pl-5 space-y-2">
+                    <li>Create a new folder in Mensinator/app/src/main/res called values-XX where XX is the language code.</li>
+                    <li>Copy the strings.xml file from Mensinator/app/src/main/res/values/strings.xml to your new folder</li>
+                    <li>Translate the strings in the new file.</li>
+                    <li>Submit a pull request!</li>
+                  </ol>
+                </div>
+
                 {/* <Link to="/docs/developer-guide" className="text-burgundy hover:text-burgundy-700 font-medium inline-block mt-4">
                   View full developer guide →
                 </Link> */}
