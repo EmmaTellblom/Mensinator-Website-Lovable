@@ -152,7 +152,7 @@ const AboutPage = () => {
               </div>
             </a>
             <a 
-              href="/docs/contributing" 
+              href="/docs/" 
               className="flex items-center p-4 bg-card rounded-lg border border-border hover:bg-accent/20 transition-colors"
             >
               <Book className="h-5 w-5 mr-3 text-burgundy" />
