@@ -76,64 +76,61 @@ const Home = () => {
             Get Started with Mensinator
           </h2>
 
-          {/* Improved Button Group for perfect sizing and wrapping */}
-          <div
-            className="grid gap-4 w-full max-w-3xl mx-auto animate-fade-in
-                        grid-cols-1 sm:grid-cols-2 md:grid-cols-4"
-          >
-            <Button
-              asChild
+          {/* Button Group: Android, F-Droid, IzzyOnDroid, Manual */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-2xl mx-auto animate-fade-in">
+            <Button 
+              asChild 
               size="lg"
-              className="w-full h-auto min-h-[60px] rounded-full px-6 py-4 bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow hover:from-slate-800 hover:to-slate-700 hover:scale-105 transition-all duration-150 text-base md:text-lg whitespace-normal break-words flex items-center justify-center"
+              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://play.google.com/store/apps/details?id=com.mensinator.app&hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full text-center"
+                className="flex items-center gap-2 justify-center"
               >
-                <Download className="h-5 w-5 shrink-0" />
-                <span className="">Download from Google Play</span>
+                <Download className="h-5 w-5" />
+                Download from Google Play
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="w-full h-auto min-h-[60px] rounded-full px-6 py-4 bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow hover:from-slate-800 hover:to-slate-700 hover:scale-105 transition-all duration-150 text-base md:text-lg whitespace-normal break-words flex items-center justify-center"
+              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://f-droid.org/en/packages/com.mensinator.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full text-center"
+                className="flex items-center gap-2 justify-center"
               >
-                <Download className="h-5 w-5 shrink-0" />
-                <span className="">Download from F-Droid</span>
+                <Download className="h-5 w-5" />
+                Download from F-Droid
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="w-full h-auto min-h-[60px] rounded-full px-6 py-4 bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow hover:from-slate-800 hover:to-slate-700 hover:scale-105 transition-all duration-150 text-base md:text-lg whitespace-normal break-words flex items-center justify-center"
+              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://apt.izzysoft.de/fdroid/index/apk/com.mensinator.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full text-center"
+                className="flex items-center gap-2 justify-center"
               >
-                <Download className="h-5 w-5 shrink-0" />
-                <span className="">Download from IzzyOnDroid</span>
+                <Download className="h-5 w-5" />
+                Download from IzzyOnDroid
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="w-full h-auto min-h-[60px] rounded-full px-6 py-4 bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow hover:from-slate-800 hover:to-slate-700 hover:scale-105 transition-all duration-150 text-base md:text-lg whitespace-normal break-words flex items-center justify-center"
+              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
-              <Link to="/manual" className="flex items-center gap-2 justify-center w-full text-center">
-                <Book className="h-5 w-5 shrink-0" />
-                <span className="">Read User Manual</span>
+              <Link to="/manual" className="flex items-center gap-2 justify-center">
+                <Book className="h-5 w-5" />
+                Read User Manual
               </Link>
             </Button>
           </div>
