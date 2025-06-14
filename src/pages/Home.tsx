@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -89,9 +88,6 @@ const Home = () => {
               </Link>
             </Button>
           </div>
-          <p className="text-md text-muted-foreground mt-2 max-w-md mx-auto animate-fade-in">
-            Ready to begin? We recommend reading the user manual before you start!
-          </p>
         </div>
       </section>
 
@@ -195,4 +191,3 @@ const Home = () => {
 };
 
 export default Home;
-
