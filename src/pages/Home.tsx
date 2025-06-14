@@ -144,7 +144,7 @@ const Home = () => {
           <h2 className="text-3xl font-bold text-center mb-6">
             Why Choose Mensinator?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
                 <Shield className="h-6 w-6 text-burgundy" />
@@ -165,20 +165,8 @@ const Home = () => {
               </p>
             </div>
             
+            {/* Open Source & Transparent card (updated) */}
             <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
-              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
-                <Smartphone className="h-6 w-6 text-burgundy" />
-              </div>
-              <h3 className="text-xl font-medium mb-2">Offline Functionality</h3>
-              <p className="text-muted-foreground">
-                Works completely offline. No internet connection required to use any feature of the app.
-              </p>
-            </div>
-            
-            {/* Revised Card: Open Source & Transparent */}
-            <div
-              className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border"
-            >
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
                 <Github className="h-6 w-6 text-burgundy" />
               </div>
@@ -186,7 +174,7 @@ const Home = () => {
                 Open Source & Transparent
               </h3>
               <p className="text-muted-foreground">
-                Our code is open source and available on GitHub for everyone to review. We have nothing to hide!
+                Our project is open source—anyone can check the code and contribute. We welcome help and ideas from everyone!
               </p>
             </div>
           </div>
