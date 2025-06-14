@@ -14,8 +14,8 @@ const Home = () => {
             alt="Mensinator Logo" 
             className="h-24 w-24 mb-6"
           />
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            <span className="gradient-text">Mensinator</span>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
+            Mensinator
           </h1>
           <p className="text-xl md:text-2xl mb-4 max-w-3xl">
             We don't track your data - you do. Period.
