@@ -56,7 +56,7 @@ const Home = () => {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gray-100 dark:bg-slate-900 py-8">
-        <div className="container mx-auto px-4 py-12 md:py-24 flex flex-col items-center text-center">
+        <div className="container mx-auto px-4 py-8 flex flex-col items-center text-center">
           <img 
             src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png" 
             alt="Mensinator Logo" 
