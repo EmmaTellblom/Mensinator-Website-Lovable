@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -50,7 +51,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="flex-1 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-700 text-white shadow transition-all duration-150 hover:from-emerald-700 hover:to-emerald-800 hover:scale-105"
+              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://f-droid.org/en/packages/com.mensinator.app/"
@@ -65,7 +66,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="flex-1 rounded-full bg-gradient-to-r from-pink-700 to-pink-600 text-white shadow transition-all duration-150 hover:from-pink-800 hover:to-pink-700 hover:scale-105"
+              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://apt.izzysoft.de/fdroid/index/apk/com.mensinator.app"
@@ -80,8 +81,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="flex-1 rounded-full border-none ring-1 ring-slate-400/10 bg-white/80 dark:bg-slate-900/90 text-slate-800 dark:text-white shadow transition-all duration-150 hover:bg-slate-100 hover:text-slate-800 hover:scale-105"
+              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <Link to="/manual" className="flex items-center gap-2 justify-center">
                 <Book className="h-5 w-5" />
@@ -195,3 +195,4 @@ const Home = () => {
 };
 
 export default Home;
+
