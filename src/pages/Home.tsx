@@ -30,7 +30,7 @@ const Home = () => {
             Get Started with Mensinator
           </h2>
 
-          {/* Centered Button Group */}
+          {/* Button Group: Android, F-Droid, Manual */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mx-auto mb-2 animate-fade-in">
             <Button 
               asChild 
@@ -47,7 +47,21 @@ const Home = () => {
                 Download for Android
               </a>
             </Button>
-
+            <Button
+              asChild
+              size="lg"
+              className="flex-1 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-700 text-white shadow transition-all duration-150 hover:from-emerald-700 hover:to-emerald-800 hover:scale-105"
+            >
+              <a
+                href="https://f-droid.org/en/packages/com.mensinator.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 justify-center"
+              >
+                <Download className="h-5 w-5" />
+                Download from F-Droid
+              </a>
+            </Button>
             <Button
               asChild
               size="lg"
