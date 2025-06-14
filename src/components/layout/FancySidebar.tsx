@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Sidebar,
@@ -56,15 +55,20 @@ const GLASS =
 const NEUTRAL_BORDER =
   "border-l-4 border-transparent group-hover:border-gray-400 group-hover:bg-gray-50 dark:group-hover:bg-slate-800";
 
-export default function FancySidebar() {
+interface FancySidebarProps {
+  collapsed: boolean;
+  setCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarProps) {
   // Track current tab
   const [tab, setTab] = React.useState(sidebarCategories[0].key);
-  const [collapsed, setCollapsed] = React.useState(false);
+  // collapsed state is now managed by ModernLayout
 
   // Animation for sidebar show/hide
   const sidebarAnim =
     "transition-all duration-300 " +
-    (collapsed ? "w-14 md:w-16" : "w-64 md:w-80");
+    (collapsed ? "w-14 md:w-16" : "w-64 md:w-80"); // md:w-16 is 64px, md:w-80 is 320px
   const location = useLocation();
 
   // For animated transition between sidebar groups
@@ -77,6 +81,7 @@ export default function FancySidebar() {
   return (
     <div className="fixed top-0 left-0 z-30 h-screen flex">
       {/* Tab Switcher (vertical) */}
+      {/* Its width is approx w-10 (40px) + px-1 (8px) = 48px */}
       <div className="flex flex-col gap-1 pt-6 pb-6 px-1 items-center bg-gradient-to-b from-gray-200/70 to-gray-100/30 dark:from-slate-700/70 dark:to-slate-800/30 shadow-lg">
         {sidebarCategories.map((cat) => {
           const active = tab === cat.key;
@@ -122,17 +127,21 @@ export default function FancySidebar() {
         </button>
       </div>
       {/* Animated main sidebar */}
+      {/* This panel is hidden on <md screens via "hidden md:flex" */}
+      {/* Its width on md+ is md:w-16 (64px) when collapsed, md:w-80 (320px) when expanded */}
       <SidebarProvider>
         <Sidebar
           className={clsx(
-            "relative h-screen hidden md:flex flex-col items-stretch group/sidebar",
-            sidebarAnim,
+            "relative h-screen hidden md:flex flex-col items-stretch group/sidebar", // Note: "hidden md:flex"
+            sidebarAnim, // Uses collapsed prop
             GLASS,
             "shadow-[0_8px_32px_0_rgba(31,38,135,0.12)] transition-all duration-300"
           )}
           style={{
-            minWidth: collapsed ? "56px" : "256px",
-            width: collapsed ? "56px" : "320px",
+            // These widths are effectively controlled by sidebarAnim classes (w-14 md:w-16 vs w-64 md:w-80)
+            // For md screens: 64px collapsed, 320px expanded
+            minWidth: collapsed ? "56px" : "256px", // Fallback for non-md, though panel is hidden on non-md
+            width: collapsed ? "64px" : "320px", // Using explicit md+ widths here for clarity with layout calc
             maxWidth: "90vw",
             borderLeft: "4px solid transparent",
             overflow: "hidden",
@@ -170,7 +179,7 @@ export default function FancySidebar() {
                             className={clsx(
                               "group transition-all duration-200 overflow-hidden rounded-xl my-0.5 px-2",
                               NEUTRAL_BORDER,
-                              collapsed && "px-1 py-2 justify-center"
+                              collapsed && "px-1 py-2 justify-center" // Adjusted for collapsed state
                             )}
                           >
                             {item.external ? (
@@ -199,7 +208,7 @@ export default function FancySidebar() {
             {/* Neutral subtle logo at bottom */}
             <div className={clsx(
               "mt-auto pb-6 flex flex-col items-center justify-center",
-              collapsed && "pl-0"
+              collapsed && "pl-0" // Adjusted for collapsed state
             )}>
               <img
                 src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
@@ -239,4 +248,3 @@ export default function FancySidebar() {
 }
 
 // File is >200 lines. If you'd like this file to be split up and easier to maintain, please ask for a refactor!
-
