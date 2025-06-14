@@ -72,8 +72,8 @@ const Home = () => {
             No signup, no cloud storage, just privacy-focused period tracking.
           </p>
 
-          {/* "Get Started" Heading */}
-          <h2 className="text-2xl font-semibold mb-6 text-zinc-900 dark:text-white animate-fade-in">
+          {/* "Get Started" Heading matches style of "App Screenshots" */}
+          <h2 className="text-3xl font-bold text-center mb-6">
             Get Started with Mensinator
           </h2>
 
