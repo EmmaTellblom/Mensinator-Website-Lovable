@@ -79,7 +79,7 @@ const Home = () => {
           </h2>
 
           {/* Button Group: Android, F-Droid, IzzyOnDroid, Manual */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-2xl mx-auto mb-4 animate-fade-in">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-2xl mx-auto animate-fade-in">
             <Button 
               asChild 
               size="lg"
@@ -140,7 +140,7 @@ const Home = () => {
       </section>
 
       {/* Features Section: Why Choose Mensinator? */}
-      <section className="bg-gray-100 dark:bg-slate-900 py-8">
+      <section className="bg-gray-100 dark:bg-slate-900 pt-4 pb-8">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-6">
             Why Choose Mensinator?
