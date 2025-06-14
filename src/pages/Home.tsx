@@ -135,8 +135,10 @@ const Home = () => {
       {/* Open Source Section */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-            <div className="max-w-xl">
+          {/* Responsive flex to stack or align cards */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+            {/* Open Source Card */}
+            <div className="max-w-xl w-full p-6 bg-background rounded-lg border border-border shadow-sm">
               <h2 className="text-3xl font-bold mb-4">Open Source Project</h2>
               <p className="text-lg mb-6">
                 Mensinator is an open source project. We believe in transparency and community collaboration.
@@ -152,33 +154,34 @@ const Home = () => {
                 View on GitHub
               </a>
             </div>
-            <div className="p-6 bg-background rounded-lg border border-border">
-              <h3 className="text-xl font-medium mb-4">Join Our Community</h3>
-              <p className="mb-4 text-muted-foreground">
+            {/* Join Our Community Card - unified styling */}
+            <div className="max-w-xl w-full p-6 bg-background rounded-lg border border-border shadow-sm">
+              <h3 className="text-3xl font-bold mb-4">Join Our Community</h3>
+              <p className="text-lg mb-6 text-muted-foreground">
                 Whether you're a developer, designer, or user with feedback, we'd love to have you as part of our community.
               </p>
               <div className="space-y-3">
                 <Link 
                   to="/manual"
-                  className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
+                  className="block text-base text-slate-700 hover:text-slate-800 font-medium"
                 >
                   Read User Manual →
                 </Link>
                 <Link 
                   to="/docs"
-                  className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
+                  className="block text-base text-slate-700 hover:text-slate-800 font-medium"
                 >
                   Read about development &rarr;
                 </Link>
                 <Link 
                   to="/about"
-                  className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
+                  className="block text-base text-slate-700 hover:text-slate-800 font-medium"
                 >
                   Meet the Team →
                 </Link>
                 <Link 
                   to="/faq"
-                  className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
+                  className="block text-base text-slate-700 hover:text-slate-800 font-medium"
                 >
                   View FAQ →
                 </Link>
@@ -192,4 +195,3 @@ const Home = () => {
 };
 
 export default Home;
-
