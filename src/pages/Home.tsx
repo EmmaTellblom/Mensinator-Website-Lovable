@@ -147,8 +147,9 @@ const Home = () => {
           </div>
           {/* Carousel container with larger area */}
           <div className="relative flex w-full items-center justify-center gap-6">
+            {/* Increased width for better screenshot display */}
             <Carousel
-              className="relative w-[650px] max-w-full" {/* Increased width */}
+              className="relative w-[650px] max-w-full"
               opts={{
                 loop: true,
                 align: "center",
