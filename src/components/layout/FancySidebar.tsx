@@ -31,7 +31,7 @@ const sidebarItems = [
   { label: "User Manual", to: "/manual", icon: Book },
   { label: "Development", to: "/docs", icon: Code },
   { label: "FAQ", to: "/faq", icon: HelpCircle },
-  { label: "About", to: "/about", icon: Users },
+  { label: "The Team", to: "/about", icon: Users },
 ];
 
 const externalLinks = [
@@ -47,7 +47,7 @@ const iconsMap: Record<string, React.ComponentType<any>> = {
   "User Manual": Book,
   Development: Code,
   FAQ: HelpCircle,
-  About: Users,
+  "The Team": Users,
   GitHub: Github,
 };
 
