@@ -140,7 +140,7 @@ const Home = () => {
       </section>
 
       {/* Screenshot Carousel Section */}
-      <section className="bg-white dark:bg-slate-900 py-8">
+      <section className="bg-gray-100 dark:bg-slate-900 py-8">
         <div className="container mx-auto px-4 flex flex-col items-center">
           <div className="flex items-center gap-2 mb-4">
             <Images className="h-6 w-6 text-primary" />
