@@ -16,7 +16,7 @@ const Navbar = () => {
           <img
             src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
             alt="Mensinator Logo"
-            className="h-10 w-10 rounded-lg shadow"
+            className="h-10 w-10 rounded-full shadow"
             draggable={false}
           />
           <span className="font-extrabold text-2xl tracking-tight text-slate-800 dark:text-white hidden sm:inline">

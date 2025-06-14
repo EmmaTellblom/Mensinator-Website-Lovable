@@ -12,7 +12,7 @@ const Home = () => {
           <img 
             src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png" 
             alt="Mensinator Logo" 
-            className="h-24 w-24 mb-6"
+            className="h-24 w-24 mb-6 rounded-full"
           />
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
             Mensinator
