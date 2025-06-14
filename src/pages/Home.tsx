@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -133,26 +132,31 @@ const Home = () => {
           <p className="text-muted-foreground mb-8 max-w-2xl text-center">
             Get a glimpse of Mensinator! Here are some example screens to show how simple and private your period tracking experience can be.
           </p>
-          <div className="w-full max-w-xl relative">
-            <Carousel>
-              <CarouselContent>
-                {screenshots.map((shot, idx) => (
-                  <CarouselItem key={idx}>
-                    <div className="flex flex-col items-center">
-                      <img 
-                        src={shot.url}
-                        alt={shot.alt}
-                        className="rounded-xl shadow-lg w-full h-72 object-cover bg-gray-200 dark:bg-slate-700"
-                        loading="lazy"
-                      />
-                      <span className="text-xs text-muted-foreground mt-2">{shot.alt}</span>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2" />
-              <CarouselNext className="right-2 top-1/2 -translate-y-1/2" />
-            </Carousel>
+          <div className="w-full flex justify-center">
+            <div className="relative w-[240px]">
+              <Carousel>
+                <CarouselContent>
+                  {screenshots.map((shot, idx) => (
+                    <CarouselItem key={idx} className="flex justify-center">
+                      <div className="flex flex-col items-center">
+                        <div className="bg-gray-200 dark:bg-slate-700 rounded-3xl overflow-hidden shadow-xl border border-gray-300 dark:border-slate-600 aspect-[9/19.5] w-[220px] max-w-full flex items-center justify-center">
+                          <img
+                            src={shot.url}
+                            alt={shot.alt}
+                            className="w-full h-full object-cover"
+                            style={{ aspectRatio: '9 / 19.5', display: 'block' }}
+                            loading="lazy"
+                          />
+                        </div>
+                        <span className="text-xs text-muted-foreground mt-2 text-center">{shot.alt}</span>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-0 top-1/2 -translate-y-1/2" />
+                <CarouselNext className="right-0 top-1/2 -translate-y-1/2" />
+              </Carousel>
+            </div>
           </div>
         </div>
       </section>
@@ -259,4 +263,3 @@ const Home = () => {
 };
 
 export default Home;
-
