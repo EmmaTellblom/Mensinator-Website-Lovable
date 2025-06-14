@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -146,10 +145,10 @@ const Home = () => {
             <Images className="h-6 w-6 text-primary" />
             <h2 className="text-2xl font-semibold">App Screenshots</h2>
           </div>
-          {/* Removed the carousel description text */}
+          {/* Carousel container with larger area */}
           <div className="relative flex w-full items-center justify-center gap-6">
             <Carousel
-              className="relative w-[410px] max-w-full"
+              className="relative w-[650px] max-w-full" {/* Increased width */}
               opts={{
                 loop: true,
                 align: "center",
@@ -161,7 +160,6 @@ const Home = () => {
             >
               <CarouselContent>
                 {screenshots.map((shot, idx) => {
-                  // Compute relation to center index (-1, 0, 1) for style
                   let offset = idx - currentIndex;
                   if (offset > screenshots.length / 2) offset -= screenshots.length;
                   if (offset < -screenshots.length / 2) offset += screenshots.length;
@@ -173,18 +171,17 @@ const Home = () => {
                     transform: isCenter
                       ? 'scale(1.0)'
                       : isSide
-                        ? 'scale(0.8) translateY(12px)'
-                        : 'scale(0.6) translateY(30px)',
-                    opacity: isCenter ? 1 : isSide ? 0.4 : 0,
+                        ? 'scale(0.92) translateY(10px)' // bigger side images
+                        : 'scale(0.75) translateY(40px)', // make distant images slightly bigger so they peek a bit
+                    opacity: isCenter ? 1 : isSide ? 0.75 : 0,
                     zIndex: isCenter ? 2 : isSide ? 1 : 0,
                   };
                   return (
                     <CarouselItem
                       key={idx}
-                      className="flex flex-col items-center basis-[80%] sm:basis-[68%]"
+                      className="flex flex-col items-center basis-[64%] sm:basis-[48%]" // wider individual items
                       style={{
                         pointerEvents: isCenter || isSide ? undefined : "none",
-                        // Hide items further than 1 away (peek only adjacent sides)
                         display: isCenter || isSide ? "flex" : "none",
                       }}
                     >
@@ -194,7 +191,7 @@ const Home = () => {
                           alt={shot.alt}
                           className="w-full h-auto object-contain select-none rounded-xl"
                           style={{
-                            maxHeight: '460px',
+                            maxHeight: '580px', // taller max height
                             ...style,
                           }}
                           loading="lazy"
@@ -207,10 +204,9 @@ const Home = () => {
                             style={{
                               background: `linear-gradient(${
                                 offset === -1
-                                  ? "90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.01) 40%"
-                                  : "270deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.01) 40%"
+                                  ? "90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.01) 40%"
+                                  : "270deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.01) 40%"
                               })`,
-                              // Tweak alpha for dark/light backgrounds
                               mixBlendMode: "lighten"
                             }}
                           />
@@ -329,4 +325,3 @@ const Home = () => {
 };
 
 export default Home;
-
