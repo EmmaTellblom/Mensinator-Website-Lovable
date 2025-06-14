@@ -10,7 +10,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { Book, Github, HelpCircle, Home, Users } from "lucide-react";
+import { Book, Github, HelpCircle, Home, Users, Code } from "lucide-react";
 
 const navItems = [
   {
@@ -25,7 +25,7 @@ const navItems = [
   },
   {
     to: "/docs",
-    icon: Book,
+    icon: Code,
     label: "Development",
   },
   {
@@ -74,7 +74,7 @@ const SidebarNav: React.FC = () => {
             href="https://github.com/EmmaTellblom/Mensinator"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-md text-burgundy hover:text-burgundy-800 text-sm font-medium transition hover-scale px-3 py-2 mt-12"
+            className="flex items-center gap-2 rounded-md text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-slate-50 text-sm font-medium transition hover-scale px-3 py-2 mt-12"
           >
             <Github className="h-5 w-5" />
             GitHub

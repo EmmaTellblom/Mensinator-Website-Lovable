@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const ModernLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <SidebarProvider>
-      <div className="min-h-screen w-full flex bg-gradient-to-tr from-slate-100/80 via-white/90 to-burgundy/10 dark:from-slate-800/90 dark:via-background dark:to-slate-700/70">
-        {/* Sidebar (glassmorphism effect) */}
+      <div className="min-h-screen w-full flex bg-gradient-to-tr from-slate-100/80 via-white/90 to-slate-200/10 dark:from-slate-800/90 dark:via-background dark:to-slate-700/70">
+        {/* Sidebar (glassmorphism effect, neutral accents) */}
         <Sidebar
           className="relative shadow-lg backdrop-blur-xl bg-white/90 dark:bg-slate-900/80 border-none"
         >
@@ -20,7 +20,7 @@ const ModernLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => 
                 className="h-11 w-11 rounded-xl shadow"
                 draggable={false}
               />
-              <span className="font-extrabold text-2xl tracking-tight text-gradient bg-gradient-to-r from-burgundy via-fuchsia-500 to-slate-700 bg-clip-text text-transparent hidden md:inline">
+              <span className="font-extrabold text-2xl tracking-tight text-slate-800 dark:text-white hidden md:inline">
                 Mensinator
               </span>
             </Link>
