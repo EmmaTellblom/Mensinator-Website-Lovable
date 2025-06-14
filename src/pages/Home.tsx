@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
+import AndroidPhoneFrame from "@/components/AndroidPhoneFrame";
 
 // Real Mensinator app screenshots
 const screenshots = [
@@ -143,22 +144,8 @@ const Home = () => {
                   {screenshots.map((shot, idx) => (
                     <CarouselItem key={idx} className="flex justify-center">
                       <div className="flex flex-col items-center">
-                        {/* Phone-like container with correct aspect ratio and border */}
-                        <div
-                          className="rounded-[2rem] overflow-hidden shadow-2xl border-2 border-gray-300 dark:border-slate-700 bg-black aspect-[9/19.5] w-[220px] max-w-full flex items-center justify-center"
-                          style={{
-                            boxShadow:
-                              "0 6px 24px 0 rgba(46, 50, 56, 0.28), 0 0.5px 2px 0 rgba(46, 50, 56, 0.07)",
-                          }}
-                        >
-                          <img
-                            src={shot.url}
-                            alt={shot.alt}
-                            className="w-full h-full object-contain bg-black"
-                            style={{ aspectRatio: '9 / 19.5', display: 'block' }}
-                            loading="lazy"
-                          />
-                        </div>
+                        {/* Phone frame with screenshot inside */}
+                        <AndroidPhoneFrame imageUrl={shot.url} alt={shot.alt} />
                         <span className="text-xs text-muted-foreground mt-2 text-center">{shot.alt}</span>
                       </div>
                     </CarouselItem>
