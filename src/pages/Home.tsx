@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -132,13 +131,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Open Source Section */}
+      {/* Open Source & Community Section */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
-          {/* Responsive flex to stack or align cards */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-            {/* Open Source Card */}
-            <div className="max-w-xl w-full p-6 bg-background rounded-lg border border-border shadow-sm">
+          <div className="flex flex-col gap-12 md:flex-row md:gap-16 items-start justify-center text-left">
+            {/* Open Source Block */}
+            <div className="flex-1 min-w-[260px] md:pr-8">
               <h2 className="text-3xl font-bold mb-4">Open Source Project</h2>
               <p className="text-lg mb-6">
                 Mensinator is an open source project. We believe in transparency and community collaboration.
@@ -154,34 +152,34 @@ const Home = () => {
                 View on GitHub
               </a>
             </div>
-            {/* Join Our Community Card - unified styling */}
-            <div className="max-w-xl w-full p-6 bg-background rounded-lg border border-border shadow-sm">
-              <h3 className="text-3xl font-bold mb-4">Join Our Community</h3>
+            {/* Join Our Community Block */}
+            <div className="flex-1 min-w-[260px] md:pl-8">
+              <h2 className="text-3xl font-bold mb-4">Join Our Community</h2>
               <p className="text-lg mb-6 text-muted-foreground">
                 Whether you're a developer, designer, or user with feedback, we'd love to have you as part of our community.
               </p>
-              <div className="space-y-3">
+              <div className="flex flex-col gap-2">
                 <Link 
                   to="/manual"
-                  className="block text-base text-slate-700 hover:text-slate-800 font-medium"
+                  className="text-base text-slate-700 hover:text-slate-800 font-medium"
                 >
                   Read User Manual →
                 </Link>
                 <Link 
                   to="/docs"
-                  className="block text-base text-slate-700 hover:text-slate-800 font-medium"
+                  className="text-base text-slate-700 hover:text-slate-800 font-medium"
                 >
                   Read about development &rarr;
                 </Link>
                 <Link 
                   to="/about"
-                  className="block text-base text-slate-700 hover:text-slate-800 font-medium"
+                  className="text-base text-slate-700 hover:text-slate-800 font-medium"
                 >
                   Meet the Team →
                 </Link>
                 <Link 
                   to="/faq"
-                  className="block text-base text-slate-700 hover:text-slate-800 font-medium"
+                  className="text-base text-slate-700 hover:text-slate-800 font-medium"
                 >
                   View FAQ →
                 </Link>
