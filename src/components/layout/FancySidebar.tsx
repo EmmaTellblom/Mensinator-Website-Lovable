@@ -11,11 +11,12 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Book, HelpCircle, Users, Github } from "lucide-react";
+import { Home, Book, Code, HelpCircle, Users, Github } from "lucide-react";
 
 const sidebarItems = [
   { label: "Home", to: "/", icon: Home },
   { label: "User Manual", to: "/manual", icon: Book },
+  { label: "Development", to: "/docs", icon: Code },
   { label: "FAQ", to: "/faq", icon: HelpCircle },
   { label: "About", to: "/about", icon: Users },
 ];
