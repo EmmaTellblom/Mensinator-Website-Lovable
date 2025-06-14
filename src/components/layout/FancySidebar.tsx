@@ -88,6 +88,16 @@ export default function FancySidebar() {
                   </Link>
                 );
               })}
+              {/* GitHub icon for mobile */}
+              <a
+                href="https://github.com/EmmaTellblom/Mensinator"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground"
+                aria-label="GitHub"
+              >
+                <Github size={20} />
+              </a>
               {/* Discord icon for mobile */}
               <a
                 href="https://discord.gg/tHA2k3bFRN"
