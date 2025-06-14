@@ -77,11 +77,11 @@ const Home = () => {
           </h2>
 
           {/* Button Group: Android, F-Droid, IzzyOnDroid, Manual */}
-          <div className="flex flex-col gap-3 w-full max-w-2xl mx-auto animate-fade-in sm:flex-row">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl mx-auto animate-fade-in">
             <Button 
               asChild 
               size="lg"
-              className="flex-1 w-full min-w-0 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-[210px] max-w-full rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105 px-4 py-3 text-base md:text-lg whitespace-normal"
             >
               <a
                 href="https://play.google.com/store/apps/details?id=com.mensinator.app&hl=en"
@@ -90,13 +90,13 @@ const Home = () => {
                 className="flex items-center gap-2 justify-center"
               >
                 <Download className="h-5 w-5" />
-                Download from Google Play
+                <span className="truncate">Download from Google Play</span>
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="flex-1 w-full min-w-0 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-[210px] max-w-full rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105 px-4 py-3 text-base md:text-lg whitespace-normal"
             >
               <a
                 href="https://f-droid.org/en/packages/com.mensinator.app/"
@@ -105,13 +105,13 @@ const Home = () => {
                 className="flex items-center gap-2 justify-center"
               >
                 <Download className="h-5 w-5" />
-                Download from F-Droid
+                <span className="truncate">Download from F-Droid</span>
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="flex-1 w-full min-w-0 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-[210px] max-w-full rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105 px-4 py-3 text-base md:text-lg whitespace-normal"
             >
               <a
                 href="https://apt.izzysoft.de/fdroid/index/apk/com.mensinator.app"
@@ -120,17 +120,17 @@ const Home = () => {
                 className="flex items-center gap-2 justify-center"
               >
                 <Download className="h-5 w-5" />
-                Download from IzzyOnDroid
+                <span className="truncate">Download from IzzyOnDroid</span>
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="flex-1 w-full min-w-0 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-[210px] max-w-full rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105 px-4 py-3 text-base md:text-lg whitespace-normal"
             >
               <Link to="/manual" className="flex items-center gap-2 justify-center">
                 <Book className="h-5 w-5" />
-                Read User Manual
+                <span className="truncate">Read User Manual</span>
               </Link>
             </Button>
           </div>
