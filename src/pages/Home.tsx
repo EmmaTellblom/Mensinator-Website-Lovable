@@ -136,35 +136,27 @@ const Home = () => {
           <p className="text-muted-foreground mb-8 max-w-2xl text-center">
             Get a glimpse of Mensinator! Here are some real screens to show how simple and private your period tracking experience can be.
           </p>
-          <div className="relative w-full flex flex-col items-center">
-            <div className="flex items-center justify-center gap-6 w-full">
-              {/* CarouselPrevious button, left of image */}
-              <CarouselPrevious className="-left-16 relative z-10" />
-
-              {/* Carousel */}
-              <div className="w-[320px] max-w-full">
-                <Carousel opts={{ loop: true }}>
-                  <CarouselContent>
-                    {screenshots.map((shot, idx) => (
-                      <CarouselItem key={idx} className="flex flex-col items-center">
-                        <img
-                          src={shot.url}
-                          alt={shot.alt}
-                          className="rounded-xl shadow-lg w-full h-auto object-contain bg-black"
-                          style={{ maxHeight: '460px', background: "#101010" }}
-                          loading="lazy"
-                        />
-                        <span className="text-xs text-muted-foreground mt-2 text-center">{shot.alt}</span>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  {/* Remove default arrow buttons from inside carousel */}
-                </Carousel>
-              </div>
-              
-              {/* CarouselNext button, right of image */}
-              <CarouselNext className="-right-16 relative z-10" />
-            </div>
+          {/* Arrows visually outside, but INSIDE Carousel context */}
+          <div className="flex w-full items-center justify-center gap-6">
+            <Carousel className="relative w-[320px] max-w-full" opts={{ loop: true }}>
+              <CarouselContent>
+                {screenshots.map((shot, idx) => (
+                  <CarouselItem key={idx} className="flex flex-col items-center">
+                    <img
+                      src={shot.url}
+                      alt={shot.alt}
+                      className="rounded-xl shadow-lg w-full h-auto object-contain bg-black"
+                      style={{ maxHeight: '460px', background: "#101010" }}
+                      loading="lazy"
+                    />
+                    <span className="text-xs text-muted-foreground mt-2 text-center">{shot.alt}</span>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              {/* Move arrows outside of images but inside Carousel provider */}
+              <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2 z-10" />
+              <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2 z-10" />
+            </Carousel>
           </div>
         </div>
       </section>
