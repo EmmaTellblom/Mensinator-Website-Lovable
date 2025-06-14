@@ -146,11 +146,8 @@ const Home = () => {
             <Images className="h-6 w-6 text-primary" />
             <h2 className="text-2xl font-semibold">App Screenshots</h2>
           </div>
-          <p className="text-muted-foreground mb-8 max-w-2xl text-center">
-            Get a glimpse of Mensinator! Here are some real screens to show how simple and private your period tracking experience can be.
-          </p>
+          {/* Removed the carousel description text */}
           <div className="relative flex w-full items-center justify-center gap-6">
-            {/* Carousel with side image previews and gradient fade */}
             <Carousel
               className="relative w-[410px] max-w-full"
               opts={{
@@ -164,42 +161,57 @@ const Home = () => {
             >
               <CarouselContent>
                 {screenshots.map((shot, idx) => {
-                  // Compute relation to center index (-1,0,1) for style
+                  // Compute relation to center index (-1, 0, 1) for style
                   let offset = idx - currentIndex;
                   if (offset > screenshots.length / 2) offset -= screenshots.length;
                   if (offset < -screenshots.length / 2) offset += screenshots.length;
-                  // center slide: scale 1, sides: scale 0.8, faded, others: hidden
+                  // Only show center and immediate left/right (peek)
                   const isCenter = offset === 0;
                   const isSide = Math.abs(offset) === 1;
                   let style: React.CSSProperties = {
                     transition: 'transform 0.4s, opacity 0.4s',
-                    transform: isCenter ? 'scale(1.0)' : isSide ? 'scale(0.8)' : 'scale(0.6)',
+                    transform: isCenter
+                      ? 'scale(1.0)'
+                      : isSide
+                        ? 'scale(0.8) translateY(12px)'
+                        : 'scale(0.6) translateY(30px)',
                     opacity: isCenter ? 1 : isSide ? 0.4 : 0,
                     zIndex: isCenter ? 2 : isSide ? 1 : 0,
                   };
                   return (
-                    <CarouselItem key={idx} className="flex flex-col items-center basis-[80%] sm:basis-[68%]">
+                    <CarouselItem
+                      key={idx}
+                      className="flex flex-col items-center basis-[80%] sm:basis-[68%]"
+                      style={{
+                        pointerEvents: isCenter || isSide ? undefined : "none",
+                        // Hide items further than 1 away (peek only adjacent sides)
+                        display: isCenter || isSide ? "flex" : "none",
+                      }}
+                    >
                       <div className="relative w-full flex items-center justify-center">
                         <img
                           src={shot.url}
                           alt={shot.alt}
                           className="w-full h-auto object-contain select-none rounded-xl"
-                          style={{ maxHeight: '460px', ...style, boxShadow: isCenter ? '0 6px 24px 2px rgba(0,0,0,0.14)' : '' }}
+                          style={{
+                            maxHeight: '460px',
+                            ...style,
+                          }}
                           loading="lazy"
                           draggable={false}
                         />
-                        {/* Gradient overlay if side image */}
+                        {/* Gradient overlay for side images */}
                         {isSide && (
                           <div
-                            className={
-                              "absolute top-0 left-0 w-full h-full pointer-events-none"
-                            }
+                            className="absolute top-0 left-0 w-full h-full pointer-events-none"
                             style={{
                               background: `linear-gradient(${
                                 offset === -1
-                                  ? "90deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.01) 40%"
-                                  : "270deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.01) 40%"
+                                  ? "90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.01) 40%"
+                                  : "270deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.01) 40%"
                               })`,
+                              // Tweak alpha for dark/light backgrounds
+                              mixBlendMode: "lighten"
                             }}
                           />
                         )}
@@ -317,3 +329,4 @@ const Home = () => {
 };
 
 export default Home;
+
