@@ -56,13 +56,15 @@ const Carousel = React.forwardRef<
     },
     ref
   ) => {
+    // Set loop: true by default, but allow override if explicitly specified
+    const mergedOpts = { loop: true, ...(opts || {}) };
     const [carouselRef, api] = useEmblaCarousel(
       {
-        ...opts,
+        ...mergedOpts,
         axis: orientation === "horizontal" ? "x" : "y",
       },
       plugins
-    )
+    );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
 

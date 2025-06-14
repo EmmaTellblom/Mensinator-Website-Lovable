@@ -9,7 +9,6 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
-import AndroidPhoneFrame from "@/components/AndroidPhoneFrame";
 
 // Real Mensinator app screenshots
 const screenshots = [
@@ -137,23 +136,34 @@ const Home = () => {
           <p className="text-muted-foreground mb-8 max-w-2xl text-center">
             Get a glimpse of Mensinator! Here are some real screens to show how simple and private your period tracking experience can be.
           </p>
-          <div className="w-full flex justify-center">
-            <div className="relative w-[240px]">
-              <Carousel>
-                <CarouselContent>
-                  {screenshots.map((shot, idx) => (
-                    <CarouselItem key={idx} className="flex justify-center">
-                      <div className="flex flex-col items-center">
-                        {/* Phone frame with screenshot inside */}
-                        <AndroidPhoneFrame imageUrl={shot.url} alt={shot.alt} />
+          <div className="relative w-full flex flex-col items-center">
+            <div className="flex items-center justify-center gap-6 w-full">
+              {/* CarouselPrevious button, left of image */}
+              <CarouselPrevious className="-left-16 relative z-10" />
+
+              {/* Carousel */}
+              <div className="w-[320px] max-w-full">
+                <Carousel opts={{ loop: true }}>
+                  <CarouselContent>
+                    {screenshots.map((shot, idx) => (
+                      <CarouselItem key={idx} className="flex flex-col items-center">
+                        <img
+                          src={shot.url}
+                          alt={shot.alt}
+                          className="rounded-xl shadow-lg w-full h-auto object-contain bg-black"
+                          style={{ maxHeight: '460px', background: "#101010" }}
+                          loading="lazy"
+                        />
                         <span className="text-xs text-muted-foreground mt-2 text-center">{shot.alt}</span>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="left-0 top-1/2 -translate-y-1/2" />
-                <CarouselNext className="right-0 top-1/2 -translate-y-1/2" />
-              </Carousel>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  {/* Remove default arrow buttons from inside carousel */}
+                </Carousel>
+              </div>
+              
+              {/* CarouselNext button, right of image */}
+              <CarouselNext className="-right-16 relative z-10" />
             </div>
           </div>
         </div>
