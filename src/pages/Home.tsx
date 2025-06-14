@@ -25,18 +25,32 @@ const Home = () => {
             A private period tracking app that keeps all your data on your device.
             No signup, no cloud storage, just privacy-focused period tracking.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-slate-700 text-white hover:bg-slate-800">
+          {/* Cool button group with glass effect and smooth animation */}
+          <div className="mx-auto relative z-10 bg-white/60 dark:bg-slate-800/70 backdrop-blur-lg border border-slate-200 dark:border-slate-700 rounded-full shadow-md flex flex-col sm:flex-row items-center w-full max-w-md p-2 gap-2 sm:gap-0 animate-fade-in">
+            <Button 
+              asChild 
+              size="lg"
+              className="flex-1 rounded-full sm:rounded-l-full sm:rounded-r-none bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow-[0_2px_10px_0_rgba(51,65,85,0.09)] border-0 ring-1 ring-slate-400/10 transition-all duration-150 hover:from-slate-800 hover:to-slate-700 scale-100 hover:scale-105"
+            >
               <a href="https://play.google.com/store/apps/details?id=com.mensinator.app&hl=en" target="_blank" rel="noopener noreferrer">
                 Download for Android
               </a>
             </Button>
-            <Button size="lg" className="bg-slate-700 text-white hover:bg-slate-800">
+            <Button
+              asChild
+              size="lg"
+              className="flex-1 border-x-0 rounded-none bg-gradient-to-r from-slate-600 to-slate-500 text-white shadow-[0_2px_10px_0_rgba(51,65,85,0.09)] border-0 ring-1 ring-slate-400/10 transition-all duration-150 hover:from-slate-700 hover:to-slate-600 scale-100 hover:scale-105"
+            >
               <a href="https://f-droid.org/en/packages/com.mensinator.app/" target="_blank" rel="noopener noreferrer">
                 Download from FDroid
               </a>
             </Button>
-            <Button size="lg" variant="outline">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="flex-1 rounded-full sm:rounded-r-full sm:rounded-l-none border-none ring-1 ring-slate-400/10 bg-white/80 dark:bg-slate-900/80 transition-all duration-150 scale-100 hover:scale-105 hover:bg-slate-100 hover:text-slate-800"
+            >
               <Link to="/manual" className="flex items-center gap-2">
                 <Book className="h-4 w-4" />
                 User Manual
