@@ -174,7 +174,7 @@ const Home = () => {
                 Open Source & Transparent
               </h3>
               <p className="text-muted-foreground">
-                The code is open source, and everyone can review it. Anyone can contribute suggestions, improvements, or features to make the app even better.
+                The code is open source and available for everyone to review. Anyone is welcome to contribute code, suggest improvements, or request new features.
               </p>
             </div>
           </div>
