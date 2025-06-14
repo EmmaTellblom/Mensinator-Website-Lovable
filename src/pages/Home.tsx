@@ -30,8 +30,8 @@ const Home = () => {
             Get Started with Mensinator
           </h2>
 
-          {/* Button Group: Android, F-Droid, Manual */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-md mx-auto mb-2 animate-fade-in">
+          {/* Button Group: Android, F-Droid, IzzyOnDroid, Manual */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-2xl mx-auto mb-2 animate-fade-in">
             <Button 
               asChild 
               size="lg"
@@ -60,6 +60,21 @@ const Home = () => {
               >
                 <Download className="h-5 w-5" />
                 Download from F-Droid
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="flex-1 rounded-full bg-gradient-to-r from-pink-700 to-pink-600 text-white shadow transition-all duration-150 hover:from-pink-800 hover:to-pink-700 hover:scale-105"
+            >
+              <a
+                href="https://apt.izzysoft.de/fdroid/index/apk/com.mensinator.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 justify-center"
+              >
+                <Download className="h-5 w-5" />
+                Download from IzzyOnDroid
               </a>
             </Button>
             <Button
