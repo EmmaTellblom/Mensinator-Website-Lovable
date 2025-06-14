@@ -54,7 +54,7 @@ const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gray-100 dark:bg-slate-900">
+      <section className="relative py-8 bg-gray-100 dark:bg-slate-900">
         <div className="container mx-auto px-4 py-12 md:py-24 flex flex-col items-center text-center">
           <img 
             src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png" 
@@ -138,14 +138,52 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Features Section - moved here, with decreased section padding/margin */}
+      <section className="py-8 bg-gray-100 dark:bg-slate-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-6">
+            Why Choose Mensinator?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
+              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
+                <Shield className="h-6 w-6 text-burgundy" />
+              </div>
+              <h3 className="text-xl font-medium mb-2">Complete Privacy</h3>
+              <p className="text-muted-foreground">
+                All your data stays on your device. No information ever leaves your phone without your explicit consent.
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
+              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
+                <Lock className="h-6 w-6 text-burgundy" />
+              </div>
+              <h3 className="text-xl font-medium mb-2">No Signup Required</h3>
+              <p className="text-muted-foreground">
+                Start using the app immediately. No accounts, no emails, no personal information needed.
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
+              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
+                <Smartphone className="h-6 w-6 text-burgundy" />
+              </div>
+              <h3 className="text-xl font-medium mb-2">Offline Functionality</h3>
+              <p className="text-muted-foreground">
+                Works completely offline. No internet connection required to use any feature of the app.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Screenshot Carousel Section */}
       <section className="bg-gray-100 dark:bg-slate-900 py-8">
         <div className="container mx-auto px-4 flex flex-col items-center">
-          {/* Updated heading here */}
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-3xl font-bold text-center mb-6">
             App Screenshots
           </h2>
-          {/* Carousel container with larger area */}
           <div className="relative flex w-full items-center justify-center gap-6">
             <Carousel
               className="relative w-[650px] max-w-full"
@@ -223,48 +261,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-16 bg-gray-100 dark:bg-slate-900">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Why Choose Mensinator?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
-              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
-                <Shield className="h-6 w-6 text-burgundy" />
-              </div>
-              <h3 className="text-xl font-medium mb-2">Complete Privacy</h3>
-              <p className="text-muted-foreground">
-                All your data stays on your device. No information ever leaves your phone without your explicit consent.
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
-              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
-                <Lock className="h-6 w-6 text-burgundy" />
-              </div>
-              <h3 className="text-xl font-medium mb-2">No Signup Required</h3>
-              <p className="text-muted-foreground">
-                Start using the app immediately. No accounts, no emails, no personal information needed.
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
-              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
-                <Smartphone className="h-6 w-6 text-burgundy" />
-              </div>
-              <h3 className="text-xl font-medium mb-2">Offline Functionality</h3>
-              <p className="text-muted-foreground">
-                Works completely offline. No internet connection required to use any feature of the app.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Open Source & Community Section */}
-      <section className="py-16 bg-muted">
+      <section className="py-8 bg-muted">
         <div className="container mx-auto px-4">
           <div className="flex flex-col gap-12 md:flex-row md:gap-16 items-start justify-center text-left">
             {/* Open Source Block */}
