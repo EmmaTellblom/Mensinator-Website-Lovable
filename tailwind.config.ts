@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,10 +19,6 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				playfair: ['"Playfair Display"', 'serif'],
-				sans: ['Inter', 'sans-serif'],
-			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -125,6 +122,3 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-
-// REMINDER: Add Playfair Display to index.html like this:
-// <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
