@@ -10,27 +10,31 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 
-// Placeholder images for screenshots
+// Real Mensinator app screenshots
 const screenshots = [
   {
-    url: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=600&q=80",
-    alt: "Screenshot 1: A woman sitting on a bed using a laptop",
+    url: "https://github.com/EmmaTellblom/Mensinator/raw/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png",
+    alt: "Screenshot 1: Calendar overview",
   },
   {
-    url: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80",
-    alt: "Screenshot 2: Turned on gray laptop computer",
+    url: "https://github.com/EmmaTellblom/Mensinator/raw/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png",
+    alt: "Screenshot 3: Symptom tracking",
   },
   {
-    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
-    alt: "Screenshot 3: Woman in white long sleeve shirt using black laptop computer",
+    url: "https://github.com/EmmaTellblom/Mensinator/raw/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png",
+    alt: "Screenshot 4: Add cycle",
   },
   {
-    url: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=600&q=80",
-    alt: "Screenshot 4: Gray and black laptop computer on surface",
+    url: "https://github.com/EmmaTellblom/Mensinator/raw/main/fastlane/metadata/android/en-US/images/phoneScreenshots/5.png",
+    alt: "Screenshot 5: Cycle history",
   },
   {
-    url: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80",
-    alt: "Screenshot 5: Person using MacBook Pro",
+    url: "https://github.com/EmmaTellblom/Mensinator/raw/main/fastlane/metadata/android/en-US/images/phoneScreenshots/7.png",
+    alt: "Screenshot 7: Settings",
+  },
+  {
+    url: "https://github.com/EmmaTellblom/Mensinator/raw/main/fastlane/metadata/android/en-US/images/phoneScreenshots/8.png",
+    alt: "Screenshot 8: Privacy options",
   },
 ];
 
@@ -130,7 +134,7 @@ const Home = () => {
             <h2 className="text-2xl font-semibold">App Screenshots</h2>
           </div>
           <p className="text-muted-foreground mb-8 max-w-2xl text-center">
-            Get a glimpse of Mensinator! Here are some example screens to show how simple and private your period tracking experience can be.
+            Get a glimpse of Mensinator! Here are some real screens to show how simple and private your period tracking experience can be.
           </p>
           <div className="w-full flex justify-center">
             <div className="relative w-[240px]">
