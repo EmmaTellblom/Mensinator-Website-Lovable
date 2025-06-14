@@ -143,11 +143,18 @@ const Home = () => {
                   {screenshots.map((shot, idx) => (
                     <CarouselItem key={idx} className="flex justify-center">
                       <div className="flex flex-col items-center">
-                        <div className="bg-gray-200 dark:bg-slate-700 rounded-3xl overflow-hidden shadow-xl border border-gray-300 dark:border-slate-600 aspect-[9/19.5] w-[220px] max-w-full flex items-center justify-center">
+                        {/* Phone-like container with correct aspect ratio and border */}
+                        <div
+                          className="rounded-[2rem] overflow-hidden shadow-2xl border-2 border-gray-300 dark:border-slate-700 bg-black aspect-[9/19.5] w-[220px] max-w-full flex items-center justify-center"
+                          style={{
+                            boxShadow:
+                              "0 6px 24px 0 rgba(46, 50, 56, 0.28), 0 0.5px 2px 0 rgba(46, 50, 56, 0.07)",
+                          }}
+                        >
                           <img
                             src={shot.url}
                             alt={shot.alt}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain bg-black"
                             style={{ aspectRatio: '9 / 19.5', display: 'block' }}
                             loading="lazy"
                           />
