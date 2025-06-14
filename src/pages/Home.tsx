@@ -77,11 +77,11 @@ const Home = () => {
           </h2>
 
           {/* Button Group: Android, F-Droid, IzzyOnDroid, Manual */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-2xl mx-auto animate-fade-in">
+          <div className="flex flex-col gap-3 w-full max-w-2xl mx-auto animate-fade-in sm:flex-row">
             <Button 
               asChild 
               size="lg"
-              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="flex-1 w-full min-w-0 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://play.google.com/store/apps/details?id=com.mensinator.app&hl=en"
@@ -96,7 +96,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="flex-1 w-full min-w-0 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://f-droid.org/en/packages/com.mensinator.app/"
@@ -111,7 +111,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="flex-1 w-full min-w-0 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://apt.izzysoft.de/fdroid/index/apk/com.mensinator.app"
@@ -126,7 +126,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="flex-1 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="flex-1 w-full min-w-0 rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <Link to="/manual" className="flex items-center gap-2 justify-center">
                 <Book className="h-5 w-5" />
