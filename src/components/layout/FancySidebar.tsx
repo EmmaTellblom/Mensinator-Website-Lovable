@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   Sidebar,
@@ -134,14 +135,12 @@ export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarPr
             // shadcn/ui Sidebar handles its own width and transition based on collapsible="icon" and data-state
           )}
           style={{
-            // Override default shadcn/ui sidebar widths
             '--sidebar-width': '320px', // Expanded width for md+
             '--sidebar-width-icon': '64px', // Collapsed width for md+
-            // Keep other necessary styles
             maxWidth: "90vw",
             borderLeft: "4px solid transparent",
             overflow: "hidden", // Keep overflow hidden
-          }}
+          } as React.CSSProperties} // Cast to React.CSSProperties to allow CSS custom properties
         >
           <SidebarContent className="h-full flex flex-col">
             <SidebarGroup>
@@ -243,3 +242,4 @@ export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarPr
 }
 
 // File is >200 lines. If you'd like this file to be split up and easier to maintain, please ask for a refactor!
+
