@@ -15,6 +15,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Home, Book, Code, HelpCircle, Users, Github, Menu } from "lucide-react";
 import clsx from "clsx";
 
+// Neutral sidebar categories (no pink/purple)
 const sidebarCategories = [
   {
     key: "main",
@@ -69,16 +70,12 @@ const sidebarCategories = [
   },
 ];
 
-// Neon accent color for bg and border
-const neon = "from-fuchsia-500 via-pink-500 to-purple-400";
-
 const GLASS =
-  "backdrop-blur-md bg-white/70 dark:bg-slate-900/80 shadow-2xl border border-white/20";
+  "backdrop-blur-md bg-white/70 dark:bg-slate-900/80 shadow-2xl border border-neutral-200/50 dark:border-slate-700/60";
 
-const NEON_BORDER =
-  "border-l-4 border-transparent border-gradient-l bg-gradient-to-tr " +
-  neon +
-  " group-hover:from-pink-600 group-hover:to-fuchsia-500";
+// Neutral border (gray highlight on hover/active)
+const NEUTRAL_BORDER =
+  "border-l-4 border-transparent group-hover:border-gray-400 group-hover:bg-gray-50 dark:group-hover:bg-slate-800";
 
 export default function FancySidebar() {
   // Track current tab
@@ -97,7 +94,7 @@ export default function FancySidebar() {
   return (
     <div className="fixed top-0 left-0 z-30 h-screen flex">
       {/* Tab Switcher (vertical) */}
-      <div className="flex flex-col gap-1 pt-6 pb-6 px-1 items-center bg-gradient-to-b from-slate-700/70 to-slate-600/30 shadow-lg">
+      <div className="flex flex-col gap-1 pt-6 pb-6 px-1 items-center bg-gradient-to-b from-gray-200/70 to-gray-100/30 dark:from-slate-700/70 dark:to-slate-800/30 shadow-lg">
         {sidebarCategories.map((cat) => {
           const active = tab === cat.key;
           return (
@@ -106,8 +103,8 @@ export default function FancySidebar() {
               className={clsx(
                 "group relative flex items-center justify-center w-10 h-10 rounded-lg my-1 transition-all duration-200",
                 active
-                  ? "bg-gradient-to-tr from-fuchsia-500 to-pink-400 shadow-lg scale-110"
-                  : "hover:bg-fuchsia-100/30 dark:hover:bg-fuchsia-900/30"
+                  ? "bg-gray-400 dark:bg-gray-700 shadow-lg scale-105"
+                  : "hover:bg-gray-200 dark:hover:bg-slate-800"
               )}
               onClick={() => setTab(cat.key)}
               aria-label={cat.label}
@@ -115,12 +112,14 @@ export default function FancySidebar() {
               <cat.icon
                 className={clsx(
                   "h-6 w-6 transition-all",
-                  active ? "text-white drop-shadow-neon" : "text-fuchsia-400"
+                  active
+                    ? "text-neutral-900 dark:text-neutral-100"
+                    : "text-gray-500 dark:text-gray-300"
                 )}
               />
               <span
                 className={clsx(
-                  "absolute left-full ml-2 px-2 py-1 rounded bg-fuchsia-700 text-white text-xs shadow-lg whitespace-nowrap pointer-events-none transition-all opacity-0",
+                  "absolute left-full ml-2 px-2 py-1 rounded bg-neutral-700 text-white text-xs shadow-lg whitespace-nowrap pointer-events-none transition-all opacity-0",
                   "group-hover:opacity-100"
                 )}
                 style={{ top: "50%", transform: "translateY(-50%)" }}
@@ -132,11 +131,11 @@ export default function FancySidebar() {
         })}
         {/* Collapse button */}
         <button
-          className="mt-auto mb-2 rounded-lg p-2 bg-gradient-to-tr from-pink-500 to-fuchsia-500 shadow-lg hover:scale-110 transition"
+          className="mt-auto mb-2 rounded-lg p-2 bg-gray-300 dark:bg-slate-700 shadow-lg hover:scale-110 transition"
           onClick={() => setCollapsed((c) => !c)}
           aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
-          <Menu className={clsx("h-6 w-6 text-white", collapsed && "rotate-180")} />
+          <Menu className={clsx("h-6 w-6 text-neutral-800 dark:text-neutral-100", collapsed && "rotate-180")} />
         </button>
       </div>
       {/* Animated main sidebar */}
@@ -146,7 +145,7 @@ export default function FancySidebar() {
             "relative h-screen hidden md:flex flex-col items-stretch group/sidebar",
             sidebarAnim,
             GLASS,
-            "shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] transition-all duration-300"
+            "shadow-[0_8px_32px_0_rgba(31,38,135,0.12)] transition-all duration-300"
           )}
           style={{
             minWidth: collapsed ? "56px" : "256px",
@@ -159,7 +158,7 @@ export default function FancySidebar() {
           <SidebarContent className="h-full flex flex-col">
             <SidebarGroup>
               <SidebarGroupLabel className={clsx(
-                "pl-2 py-3 uppercase text-xs tracking-wider font-bold text-fuchsia-600 transition-all",
+                "pl-2 py-3 uppercase text-xs tracking-wider font-bold text-gray-700 dark:text-gray-300 transition-all",
                 collapsed && "opacity-0 pointer-events-none"
               )}>
                 {sidebarCategories.find((c) => c.key === tab)?.label}
@@ -176,7 +175,7 @@ export default function FancySidebar() {
                           variant={location.pathname === item.to ? "outline" : "default"}
                           className={clsx(
                             "group transition-all duration-200 overflow-hidden rounded-xl my-0.5 px-2",
-                            NEON_BORDER,
+                            NEUTRAL_BORDER,
                             collapsed && "px-1 py-2 justify-center"
                           )}
                         >
@@ -187,12 +186,12 @@ export default function FancySidebar() {
                               rel="noopener noreferrer"
                               className="flex items-center gap-3"
                             >
-                              <item.icon className="h-5 w-5 text-fuchsia-400 group-hover:text-pink-500" />
+                              <item.icon className="h-5 w-5 text-gray-500 dark:text-gray-300 group-hover:text-neutral-900 dark:group-hover:text-neutral-100" />
                               {!collapsed && <span>{item.label}</span>}
                             </a>
                           ) : (
                             <Link to={item.to} className="flex items-center gap-3">
-                              <item.icon className="h-5 w-5 text-fuchsia-400 group-hover:text-pink-500" />
+                              <item.icon className="h-5 w-5 text-gray-500 dark:text-gray-300 group-hover:text-neutral-900 dark:group-hover:text-neutral-100" />
                               {!collapsed && <span>{item.label}</span>}
                             </Link>
                           )}
@@ -202,7 +201,7 @@ export default function FancySidebar() {
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>
-            {/* Neon glowing bottom logo */}
+            {/* Neutral subtle logo at bottom */}
             <div className={clsx(
               "mt-auto pb-6 flex flex-col items-center justify-center",
               collapsed && "pl-0"
@@ -210,13 +209,13 @@ export default function FancySidebar() {
               <img
                 src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
                 className={clsx(
-                  "h-9 w-9 rounded-full shadow-lg mb-2 mt-6 border-2 border-fuchsia-400 transition-all",
+                  "h-9 w-9 rounded-full shadow-lg mb-2 mt-6 border-2 border-gray-300 dark:border-slate-600 transition-all",
                   collapsed ? "mx-auto" : ""
                 )}
                 alt="logo"
               />
               {!collapsed && (
-                <span className="uppercase text-[0.85rem] tracking-widest font-black text-fuchsia-600 drop-shadow-neon animate-fade-in">
+                <span className="uppercase text-[0.85rem] tracking-widest font-black text-gray-600 dark:text-gray-300 animate-fade-in">
                   Mensinator
                 </span>
               )}
@@ -227,3 +226,5 @@ export default function FancySidebar() {
     </div>
   );
 }
+
+// File is >200 lines. If you'd like this file to be split up and easier to maintain, please ask for a refactor!
