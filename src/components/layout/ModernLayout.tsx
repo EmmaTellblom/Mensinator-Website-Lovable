@@ -1,96 +1,40 @@
 
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Github, Book, Home, Users, HelpCircle } from "lucide-react";
+import { Sidebar, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import SidebarNav from "./SidebarNav";
+import { Link } from "react-router-dom";
 
-const navItems = [
-  {
-    to: "/",
-    icon: <Home className="h-5 w-5" />,
-    label: "Home",
-  },
-  {
-    to: "/manual",
-    icon: <Book className="h-5 w-5" />,
-    label: "User Manual",
-  },
-  {
-    to: "/docs",
-    icon: <Book className="h-5 w-5" />,
-    label: "Development",
-  },
-  {
-    to: "/faq",
-    icon: <HelpCircle className="h-5 w-5" />,
-    label: "FAQ",
-  },
-  {
-    to: "/about",
-    icon: <Users className="h-5 w-5" />,
-    label: "About",
-  },
-];
-
-interface ModernLayoutProps {
-  children: React.ReactNode;
-}
-
-/**
- * A modern sidebar layout: sidebar on left, main page content on right.
- */
-const ModernLayout: React.FC<ModernLayoutProps> = ({ children }) => {
-  const location = useLocation();
+const ModernLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="min-h-screen flex bg-muted">
-      {/* Sidebar */}
-      <aside className="w-64 bg-background border-r border-border flex flex-col py-8 px-6">
-        <Link to="/" className="flex items-center mb-8 gap-3 group">
-          <img
-            src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
-            alt="Mensinator Logo"
-            className="h-9 w-9 rounded"
-          />
-          <span className="font-extrabold text-2xl tracking-tight group-hover:text-burgundy transition-colors">
-            Mensinator
-          </span>
-        </Link>
-        <nav className="flex flex-col gap-1 mt-4">
-          {navItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className={`flex items-center gap-3 rounded-md px-3 py-2 font-semibold text-sm transition
-                ${
-                  location.pathname === item.to
-                    ? "bg-burgundy text-white shadow"
-                    : "text-foreground hover:bg-accent"
-                }`}
-            >
-              {item.icon}
-              <span>{item.label}</span>
+    <SidebarProvider>
+      <div className="min-h-screen w-full flex bg-gradient-to-tr from-slate-100/80 via-white/90 to-burgundy/10 dark:from-slate-800/90 dark:via-background dark:to-slate-700/70">
+        {/* Sidebar (glassmorphism effect) */}
+        <Sidebar
+          className="relative shadow-lg backdrop-blur-xl bg-white/90 dark:bg-slate-900/80 border-none"
+        >
+          <div className="flex flex-col items-center py-6 px-2">
+            <Link to="/" className="flex items-center gap-2 mb-7 hover-scale focus:outline-none">
+              <img
+                src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
+                alt="Mensinator Logo"
+                className="h-11 w-11 rounded-xl shadow"
+                draggable={false}
+              />
+              <span className="font-extrabold text-2xl tracking-tight text-gradient bg-gradient-to-r from-burgundy via-fuchsia-500 to-slate-700 bg-clip-text text-transparent hidden md:inline">
+                Mensinator
+              </span>
             </Link>
-          ))}
-        </nav>
-        <div className="mt-auto pt-8">
-          <a
-            href="https://github.com/EmmaTellblom/Mensinator"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-burgundy hover:text-burgundy-800 transition"
-          >
-            <Github className="h-5 w-5" />
-            <span className="font-medium">GitHub</span>
-          </a>
-          <p className="mt-3 text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Mensinator
-          </p>
-        </div>
-      </aside>
-      {/* Main Content */}
-      <main className="flex-1 min-w-0 py-10 px-4 md:px-10">
-        {children}
-      </main>
-    </div>
+          </div>
+          <SidebarNav />
+        </Sidebar>
+        {/* Collapse trigger as a floating fab on mobile */}
+        <SidebarTrigger className="fixed top-3 left-3 z-40 md:hidden shadow-lg bg-white/80 dark:bg-slate-900/80 rounded-xl border border-slate-200 dark:border-slate-700" />
+        {/* Main Content */}
+        <main className="flex-1 min-w-0 flex flex-col items-stretch px-2 py-6 sm:px-6 md:px-10 xl:px-16 transition-all">
+          {children}
+        </main>
+      </div>
+    </SidebarProvider>
   );
 };
 
