@@ -167,7 +167,7 @@ const Home = () => {
                   to="/docs"
                   className="block text-sm text-slate-700 hover:text-slate-800 font-medium"
                 >
-                  Read Documentation →
+                  Read about development &rarr;
                 </Link>
                 <Link 
                   to="/about"
