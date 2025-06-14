@@ -182,7 +182,7 @@ const Home = () => {
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
                 <Github className="h-6 w-6 text-burgundy" />
               </div>
-              <h3 className="text-xl font-medium mb-2 underline decoration-dotted underline-offset-4">
+              <h3 className="text-xl font-medium mb-2">
                 Open Source & Transparent
               </h3>
               <p className="text-muted-foreground">
