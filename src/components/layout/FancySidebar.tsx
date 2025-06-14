@@ -96,7 +96,12 @@ export default function FancySidebar() {
                 className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground"
                 aria-label="Discord"
               >
-                <img src="/icons/discord.svg" alt="Discord" className="h-5 w-5" />
+                <img
+                  src="/icons/discord.svg"
+                  alt="Discord"
+                  className="h-5 w-5 text-inherit fill-current stroke-current"
+                  style={{ color: 'inherit' }}
+                />
               </a>
             </div>
           </div>
@@ -152,6 +157,7 @@ export default function FancySidebar() {
                             href="https://github.com/EmmaTellblom/Mensinator"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="text-sidebar-foreground"
                           >
                             <Github className="h-4 w-4" />
                             <span>GitHub</span>
@@ -165,8 +171,14 @@ export default function FancySidebar() {
                             href="https://discord.gg/tHA2k3bFRN"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="text-sidebar-foreground"
                           >
-                            <img src="/icons/discord.svg" alt="Discord" className="h-4 w-4" />
+                            <img
+                              src="/icons/discord.svg"
+                              alt="Discord"
+                              className="h-4 w-4 text-inherit fill-current stroke-current"
+                              style={{ color: 'inherit' }}
+                            />
                             <span>Discord</span>
                           </a>
                         </SidebarMenuButton>
@@ -232,6 +244,7 @@ export default function FancySidebar() {
                     href="https://github.com/EmmaTellblom/Mensinator"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="text-sidebar-foreground"
                   >
                     <Github className="h-4 w-4" />
                     <span>GitHub</span>
@@ -245,8 +258,14 @@ export default function FancySidebar() {
                     href="https://discord.gg/tHA2k3bFRN"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="text-sidebar-foreground"
                   >
-                    <img src="/icons/discord.svg" alt="Discord" className="h-4 w-4" />
+                    <img
+                      src="/icons/discord.svg"
+                      alt="Discord"
+                      className="h-4 w-4 text-inherit fill-current stroke-current"
+                      style={{ color: 'inherit' }}
+                    />
                     <span>Discord</span>
                   </a>
                 </SidebarMenuButton>
