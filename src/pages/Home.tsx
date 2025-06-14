@@ -19,7 +19,7 @@ const features = [
   {
     icon: Smartphone,
     title: "For Every Android Device",
-    description: "Works beautifully across Android devices of all shapes and sizes. Also available on F-Droid."
+    description: "Works beautifully across Android devices of all shapes and sizes."
   },
   {
     icon: Eye,
@@ -48,25 +48,25 @@ const appStoreLinks = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen font-playfair bg-gradient-to-br from-slate-100 via-slate-50 to-slate-300 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
+    <div className="flex flex-col min-h-screen font-playfair bg-gradient-to-br from-zinc-100 via-zinc-50 to-zinc-200 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-950 transition-colors duration-300">
       {/* HERO SECTION */}
       <section className="relative w-full min-h-[60vh] flex flex-col justify-center items-center text-center py-24 px-4 md:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/90 via-slate-700/30 to-transparent pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-black/90 via-zinc-700/30 to-transparent pointer-events-none z-0" />
         <div className="relative z-10">
           <img 
             src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
             alt="Mensinator Logo"
-            className="mx-auto h-28 w-28 rounded-full mb-8 shadow-2xl bg-white/80 dark:bg-slate-950/80 ring-2 ring-accent animate-fade-in"
+            className="mx-auto h-28 w-28 rounded-full mb-8 shadow-2xl bg-white/80 dark:bg-zinc-950/80 ring-2 ring-zinc-400 animate-fade-in"
             draggable={false}
           />
-          <h1 className="font-extrabold text-5xl md:text-7xl mb-5 bg-gradient-to-r from-slate-800 via-slate-500 to-blue-600 dark:from-slate-100 dark:via-white dark:to-sky-400 bg-clip-text text-transparent tracking-tight drop-shadow">
+          <h1 className="font-extrabold text-5xl md:text-7xl mb-5 bg-gradient-to-r from-black via-zinc-700 to-zinc-600 dark:from-zinc-100 dark:via-white dark:to-zinc-100 bg-clip-text text-transparent tracking-tight drop-shadow">
             Mensinator
           </h1>
-          <h2 className="text-lg md:text-2xl font-semibold mb-6 text-slate-800 dark:text-slate-200 max-w-2xl mx-auto animate-fade-in">
+          <h2 className="text-lg md:text-2xl font-semibold mb-6 text-zinc-800 dark:text-zinc-200 max-w-2xl mx-auto animate-fade-in">
             The World’s Most Private Period Tracker
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-200 max-w-2xl mx-auto mb-8 animate-fade-in">
-            <span className="font-semibold text-blue-700 dark:text-blue-300">No tracking. No accounts. No B.S.</span>  
+          <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-200 max-w-2xl mx-auto mb-8 animate-fade-in">
+            <span className="font-semibold text-black dark:text-zinc-50">No tracking. No accounts. No B.S.</span>
             <br className="hidden sm:inline" />
             All your data stays on your device.<br />
             <span className="text-sm text-muted-foreground">We don&apos;t track you. You track your cycle.</span>
@@ -79,7 +79,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={link.label}
-                className="flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-br from-slate-900 via-slate-700 to-blue-700 text-white shadow-xl text-lg font-semibold hover:scale-105 hover:from-blue-800 hover:to-blue-600 transition-all group"
+                className="flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-br from-black via-zinc-700 to-zinc-800 text-white shadow-xl text-lg font-semibold hover:scale-105 hover:from-zinc-900 hover:to-zinc-600 transition-all group"
               >
                 {link.icon}
                 {link.label}
@@ -92,7 +92,7 @@ export default function Home() {
               href="https://github.com/EmmaTellblom/Mensinator"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center group text-slate-700 dark:text-slate-100 text-base font-medium hover:text-blue-900 dark:hover:text-blue-400 transition"
+              className="inline-flex items-center group text-zinc-700 dark:text-zinc-100 text-base font-medium hover:text-black dark:hover:text-white transition"
             >
               <Github className="mr-2 h-5 w-5" />
               100% Open Source – See the Code
@@ -105,42 +105,41 @@ export default function Home() {
       {/* FEATURE CARDS */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white tracking-tight animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-zinc-900 dark:text-white tracking-tight animate-fade-in">
             Why Mensinator is Different
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {features.map(({ icon: Icon, title, description }, i) => (
               <div
                 key={title}
-                className="bg-gradient-to-tr from-slate-50 via-slate-200 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border border-border/70 rounded-2xl p-6 flex flex-col items-center gap-2 text-center shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl animate-fade-in"
+                className="bg-gradient-to-tr from-white via-zinc-100 to-zinc-200 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-950 border border-border/70 rounded-2xl p-6 flex flex-col items-center gap-2 text-center shadow-lg transition-all hover:-translate-y-1 hover:shadow-2xl animate-fade-in"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <span className="p-4 rounded-full bg-accent/50 mb-1">
-                  <Icon className="h-8 w-8 text-blue-700 dark:text-blue-400" />
+                <span className="p-4 rounded-full bg-zinc-200 dark:bg-zinc-700 mb-1">
+                  <Icon className="h-8 w-8 text-black dark:text-white" />
                 </span>
-                <h3 className="font-bold text-lg text-slate-900 dark:text-white">{title}</h3>
-                <p className="text-slate-600 dark:text-slate-300">{description}</p>
+                <h3 className="font-bold text-lg text-zinc-900 dark:text-white">{title}</h3>
+                <p className="text-zinc-600 dark:text-zinc-300">{description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* APP SHOWCASE (placeholder for screenshots) */}
+      {/* APP SHOWCASE */}
       <section className="relative py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-center text-slate-900 dark:text-slate-100 tracking-tight">
+          <h2 className="text-3xl font-bold mb-8 text-center text-zinc-900 dark:text-zinc-100 tracking-tight">
             See Mensinator in Action
           </h2>
           <div className="flex justify-center gap-8 flex-wrap">
-            {/* Add up to 3 placeholders for app screenshots. Replace src values later! */}
             {[1, 2, 3].map(n => (
               <div 
                 key={n}
-                className="w-[230px] h-[475px] rounded-3xl bg-slate-300 dark:bg-slate-700 shadow-2xl flex items-center justify-center overflow-hidden ring-2 ring-accent-foreground animate-fade-in"
+                className="w-[230px] h-[475px] rounded-3xl bg-zinc-200 dark:bg-zinc-700 shadow-2xl flex items-center justify-center overflow-hidden ring-2 ring-zinc-400 animate-fade-in"
                 style={{ animationDelay: `${n * 80}ms` }}
               >
-                <span className="text-slate-500 dark:text-slate-300 text-center px-3 font-mono">
+                <span className="text-zinc-500 dark:text-zinc-300 text-center px-3 font-mono">
                   App Screenshot<br />
                   <span className="text-xs opacity-70">Placeholder {n}</span>
                 </span>
@@ -156,22 +155,22 @@ export default function Home() {
       {/* PRIVACY MANIFESTO */}
       <section className="py-20 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4 text-slate-900 dark:text-white">
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4 text-zinc-900 dark:text-white">
             Privacy is Power. Your Body. Your Data.
           </h2>
-          <blockquote className="italic text-lg mb-4 text-slate-700 dark:text-slate-200">
+          <blockquote className="italic text-lg mb-4 text-zinc-700 dark:text-zinc-200">
             &quot;Most period tracking apps treat your cycle like a commodity. We think it&apos;s none of their business.&quot;
           </blockquote>
-          <p className="text-base md:text-lg mb-6 text-slate-600 dark:text-slate-300">
+          <p className="text-base md:text-lg mb-6 text-zinc-600 dark:text-zinc-300">
             Mensinator puts you in control. No cloud uploads, signups, accounts, hidden analytics, or secret trackers. Everything stays on your device &ndash; unless <b>you</b> say otherwise.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild className="rounded-full text-lg px-7 py-3 bg-gradient-to-r from-slate-800 to-blue-700 text-white hover:from-blue-900 hover:to-blue-500 shadow-xl hover:scale-105 transition-all font-bold">
+            <Button asChild className="rounded-full text-lg px-7 py-3 bg-gradient-to-r from-black to-zinc-700 text-white hover:from-zinc-900 hover:to-zinc-500 shadow-xl hover:scale-105 transition-all font-bold">
               <a href="https://f-droid.org/en/packages/com.mensinator.app/" target="_blank" rel="noopener noreferrer">
                 Get Mensinator Free
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full text-lg px-7 py-3 font-bold">
+            <Button asChild variant="outline" className="rounded-full text-lg px-7 py-3 font-bold border-zinc-400 text-zinc-800 dark:text-zinc-100 dark:border-zinc-600">
               <Link to="/manual">Read User Manual</Link>
             </Button>
           </div>
@@ -179,12 +178,12 @@ export default function Home() {
       </section>
 
       {/* COMMUNITY / FINAL CTA */}
-      <section className="bg-slate-950 dark:bg-slate-900 text-white py-16 px-4">
+      <section className="bg-black dark:bg-zinc-900 text-white py-16 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4 animate-fade-in">
             Join the Movement. Own Your Cycle.
           </h2>
-          <p className="text-lg md:text-xl mb-7 text-slate-100 animate-fade-in">
+          <p className="text-lg md:text-xl mb-7 text-zinc-100 animate-fade-in">
             We’re building the world’s most transparent, privacy-first period tracker, together.  
             Our community is open to feedback, ideas, and contributors of all backgrounds.
           </p>
@@ -193,7 +192,7 @@ export default function Home() {
               href="https://github.com/EmmaTellblom/Mensinator"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-bl from-slate-800 via-slate-700 to-blue-700 text-white text-lg font-bold shadow group hover:scale-105 hover:from-blue-800 hover:to-blue-600 transition-all hover:ring-2 hover:ring-blue-400"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-bl from-black via-zinc-800 to-zinc-700 text-white text-lg font-bold shadow group hover:scale-105 hover:from-zinc-900 hover:to-zinc-600 transition-all hover:ring-2 hover:ring-zinc-400"
             >
               <Github className="h-6 w-6" />
               GitHub Community
@@ -202,10 +201,10 @@ export default function Home() {
               href="https://discord.gg/tHA2k3bFRN"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-br from-blue-700 via-slate-700 to-slate-600 text-white text-lg font-bold shadow group hover:scale-105 hover:from-blue-900 hover:to-blue-700 transition-all hover:ring-2 hover:ring-blue-400"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-600 text-white text-lg font-bold shadow group hover:scale-105 hover:from-black hover:to-zinc-800 transition-all hover:ring-2 hover:ring-zinc-400"
             >
               <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="10" fill="#5865F2" />
+                <circle cx="12" cy="12" r="10" fill="#23272A" />
                 <ellipse cx="9.5" cy="13.5" rx="1.2" ry="1" fill="#fff"/>
                 <ellipse cx="14.5" cy="13.5" rx="1.2" ry="1" fill="#fff"/>
                 <rect x="8" y="8.5" width="8" height="4" rx="2" fill="#fff" opacity=".35"/>
@@ -218,3 +217,5 @@ export default function Home() {
     </div>
   );
 }
+
+// This file has reached 221+ lines, consider refactoring into smaller, focused components for maintainability.
