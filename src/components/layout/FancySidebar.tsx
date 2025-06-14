@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Sidebar,
@@ -13,37 +12,43 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { Link, useLocation } from "react-router-dom";
-import { Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Sidebar navigation items
+// Import Lucide icons
+import {
+  Home,
+  Book,
+  Code,
+  HelpCircle,
+  Users,
+  Github,
+  Menu as MenuIcon,
+} from "lucide-react";
+
+// Sidebar navigation items with icon references
 const sidebarItems = [
-  { label: "Home", to: "/", icon: "menu" }, // Placeholder, see below
-  { label: "User Manual", to: "/manual", icon: "menu" },
-  { label: "Development", to: "/docs", icon: "menu" },
-  { label: "FAQ", to: "/faq", icon: "menu" },
-  { label: "About", to: "/about", icon: "menu" },
+  { label: "Home", to: "/", icon: Home },
+  { label: "User Manual", to: "/manual", icon: Book },
+  { label: "Development", to: "/docs", icon: Code },
+  { label: "FAQ", to: "/faq", icon: HelpCircle },
+  { label: "About", to: "/about", icon: Users },
 ];
 
 const externalLinks = [
   {
     label: "GitHub",
     to: "https://github.com/EmmaTellblom/Mensinator",
-    icon: "menu",
+    icon: Github,
   },
 ];
 
-// Importing only allowed icons
-import { Menu as MenuIcon } from "lucide-react"; // for the toggle button
-
-// Map nav to Lucide icon, fallback to "Menu" if missing
-const iconsMap = {
-  Home: MenuIcon,
-  "User Manual": MenuIcon,
-  Development: MenuIcon,
-  FAQ: MenuIcon,
-  About: MenuIcon,
-  GitHub: MenuIcon,
+const iconsMap: Record<string, React.ComponentType<any>> = {
+  Home,
+  "User Manual": Book,
+  Development: Code,
+  FAQ: HelpCircle,
+  About: Users,
+  GitHub: Github,
 };
 
 export default function FancySidebar() {
