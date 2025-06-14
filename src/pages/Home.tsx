@@ -99,7 +99,7 @@ const Home = () => {
             Why Choose Mensinator?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background">
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
                 <Shield className="h-6 w-6 text-burgundy" />
               </div>
@@ -109,7 +109,7 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background">
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
                 <Lock className="h-6 w-6 text-burgundy" />
               </div>
@@ -119,7 +119,7 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background">
+            <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
                 <Smartphone className="h-6 w-6 text-burgundy" />
               </div>
