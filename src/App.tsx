@@ -1,10 +1,9 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/layout/Layout";
+import ModernLayout from "./components/layout/ModernLayout";
 import Home from "./pages/Home";
 import Documentation from "./pages/Documentation";
 import FAQPage from "./pages/FAQ";
@@ -20,7 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
+        <ModernLayout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/docs" element={<Documentation />} />
@@ -29,7 +28,7 @@ const App = () => (
             <Route path="/manual" element={<UserManual />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Layout>
+        </ModernLayout>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
