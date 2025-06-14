@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Sidebar,
@@ -24,8 +23,7 @@ import {
   Users,
   Github,
   Menu as MenuIcon,
-  // Import the Discord icon
-  Discord,
+  MessageCircle, // use this as the Discord icon
 } from "lucide-react";
 
 // Sidebar navigation items with icon references
@@ -46,7 +44,7 @@ const externalLinks = [
   {
     label: "Discord",
     to: "https://discord.gg/tHA2k3bFRN",
-    icon: Discord,
+    icon: MessageCircle, // <-- use MessageCircle icon for Discord
   },
 ];
 
@@ -57,7 +55,7 @@ const iconsMap: Record<string, React.ComponentType<any>> = {
   FAQ: HelpCircle,
   "The Team": Users,
   GitHub: Github,
-  Discord: Discord,
+  Discord: MessageCircle, // <-- use MessageCircle icon for Discord
 };
 
 export default function FancySidebar() {
@@ -68,20 +66,16 @@ export default function FancySidebar() {
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
   if (isMobile) {
-    // On mobile: render icon bar with a menu toggle,
-    // show full sidebar in overlay/sheet only if sidebarOpen is true
     return (
       <>
         {/* Mobile icon bar */}
         <nav className="fixed z-30 top-0 left-0 w-14 h-screen bg-sidebar border-r flex flex-col justify-between items-center">
-          {/* Logo */}
           <div className="flex flex-col items-center py-4">
             <img
               src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
               className="h-8 w-8 rounded-full mb-3"
               alt="Mensinator logo"
             />
-            {/* Sidebar nav icons only */}
             <div className="flex flex-col gap-2">
               {sidebarItems.map((item) => {
                 const Icon = iconsMap[item.label] || MenuIcon;
@@ -100,7 +94,6 @@ export default function FancySidebar() {
               })}
             </div>
           </div>
-          {/* Menu button to expand full sidebar */}
           <button
             className="mb-4 w-10 h-10 flex items-center justify-center rounded-md bg-accent/60 hover:bg-accent transition"
             onClick={() => setSidebarOpen(true)}
@@ -109,7 +102,6 @@ export default function FancySidebar() {
             <MenuIcon size={24} />
           </button>
         </nav>
-        {/* Overlay full sidebar when expanded */}
         {sidebarOpen && (
           <div className="fixed inset-0 z-40 bg-black/50" onClick={() => setSidebarOpen(false)}>
             <aside
@@ -178,7 +170,6 @@ export default function FancySidebar() {
                   © {new Date().getFullYear()} Mensinator
                 </div>
               </SidebarContent>
-              {/* Close button top-right (visible only on full sidebar) */}
               <button
                 className="absolute top-4 right-4 bg-accent hover:bg-accent/80 rounded-full p-2"
                 onClick={() => setSidebarOpen(false)}
@@ -189,7 +180,6 @@ export default function FancySidebar() {
             </aside>
           </div>
         )}
-        {/* Spacer for sidebar width, so page doesn't go under the fixed nav */}
         <div className="w-14"></div>
       </>
     );
