@@ -1,7 +1,39 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Book, Download, Shield, Lock, Smartphone, Github } from 'lucide-react';
+import { Book, Download, Shield, Lock, Smartphone, Github, Images } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+
+// Placeholder images for screenshots
+const screenshots = [
+  {
+    url: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=600&q=80",
+    alt: "Screenshot 1: A woman sitting on a bed using a laptop",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=600&q=80",
+    alt: "Screenshot 2: Turned on gray laptop computer",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
+    alt: "Screenshot 3: Woman in white long sleeve shirt using black laptop computer",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=600&q=80",
+    alt: "Screenshot 4: Gray and black laptop computer on surface",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80",
+    alt: "Screenshot 5: Person using MacBook Pro",
+  },
+];
 
 const Home = () => {
   return (
@@ -14,7 +46,7 @@ const Home = () => {
             alt="Mensinator Logo" 
             className="h-24 w-24 mb-6 rounded-full"
           />
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-zinc-900 dark:text-white">
             Mensinator
           </h1>
           <p className="text-xl md:text-2xl mb-4 max-w-3xl">
@@ -26,7 +58,7 @@ const Home = () => {
           </p>
 
           {/* "Get Started" Heading */}
-          <h2 className="text-2xl font-semibold mb-6 text-slate-900 dark:text-white animate-fade-in">
+          <h2 className="text-2xl font-semibold mb-6 text-zinc-900 dark:text-white animate-fade-in">
             Get Started with Mensinator
           </h2>
 
@@ -87,6 +119,40 @@ const Home = () => {
                 Read User Manual
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Screenshot Carousel Section */}
+      <section className="bg-white dark:bg-slate-900 py-8">
+        <div className="container mx-auto px-4 flex flex-col items-center">
+          <div className="flex items-center gap-2 mb-4">
+            <Images className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-semibold">App Screenshots</h2>
+          </div>
+          <p className="text-muted-foreground mb-8 max-w-2xl text-center">
+            Get a glimpse of Mensinator! Here are some example screens to show how simple and private your period tracking experience can be.
+          </p>
+          <div className="w-full max-w-xl relative">
+            <Carousel>
+              <CarouselContent>
+                {screenshots.map((shot, idx) => (
+                  <CarouselItem key={idx}>
+                    <div className="flex flex-col items-center">
+                      <img 
+                        src={shot.url}
+                        alt={shot.alt}
+                        className="rounded-xl shadow-lg w-full h-72 object-cover bg-gray-200 dark:bg-slate-700"
+                        loading="lazy"
+                      />
+                      <span className="text-xs text-muted-foreground mt-2">{shot.alt}</span>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2 top-1/2 -translate-y-1/2" />
+              <CarouselNext className="right-2 top-1/2 -translate-y-1/2" />
+            </Carousel>
           </div>
         </div>
       </section>
@@ -193,3 +259,4 @@ const Home = () => {
 };
 
 export default Home;
+
