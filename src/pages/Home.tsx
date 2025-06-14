@@ -175,25 +175,20 @@ const Home = () => {
               </p>
             </div>
             
-            {/* New Card: Open Source & Transparent */}
-            <a
-              href="https://github.com/EmmaTellblom/Mensinator"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border transition-colors hover:bg-accent/40 focus-visible:ring-2 focus-visible:ring-ring"
-              tabIndex={0}
-              aria-label="View Mensinator code on GitHub"
+            {/* Revised Card: Open Source & Transparent */}
+            <div
+              className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border"
             >
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
                 <Github className="h-6 w-6 text-burgundy" />
               </div>
-              <h3 className="text-xl font-medium mb-2 underline decoration-dotted underline-offset-4 transition-colors hover:text-slate-900 dark:hover:text-white">
+              <h3 className="text-xl font-medium mb-2 underline decoration-dotted underline-offset-4">
                 Open Source & Transparent
               </h3>
               <p className="text-muted-foreground">
-                Our code is open source. You can check everything yourself on GitHub—nothing to hide!
+                Our code is open source and available on GitHub for everyone to review. We have nothing to hide!
               </p>
-            </a>
+            </div>
           </div>
         </div>
       </section>
