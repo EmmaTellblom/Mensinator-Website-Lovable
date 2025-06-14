@@ -15,38 +15,18 @@ import { Link, useLocation } from "react-router-dom";
 import { Home, Book, Code, HelpCircle, Users, Github, Menu } from "lucide-react";
 import clsx from "clsx";
 
-// Neutral sidebar categories (no pink/purple)
+// Sidebar categories (only neutral colors)
 const sidebarCategories = [
   {
     key: "main",
     label: "Main",
     icon: Home,
     items: [
-      {
-        label: "Home",
-        to: "/",
-        icon: Home,
-      },
-      {
-        label: "Development",
-        to: "/docs",
-        icon: Code,
-      },
-      {
-        label: "FAQ",
-        to: "/faq",
-        icon: HelpCircle,
-      },
-      {
-        label: "About",
-        to: "/about",
-        icon: Users,
-      },
-      {
-        label: "User Manual",
-        to: "/manual",
-        icon: Book,
-      },
+      { label: "Home", to: "/", icon: Home },
+      { label: "Development", to: "/docs", icon: Code },
+      { label: "FAQ", to: "/faq", icon: HelpCircle },
+      { label: "About", to: "/about", icon: Users },
+      { label: "User Manual", to: "/manual", icon: Book },
     ],
   },
   {
@@ -70,10 +50,9 @@ const sidebarCategories = [
   },
 ];
 
+// Neutral glassy style
 const GLASS =
   "backdrop-blur-md bg-white/70 dark:bg-slate-900/80 shadow-2xl border border-neutral-200/50 dark:border-slate-700/60";
-
-// Neutral border (gray highlight on hover/active)
 const NEUTRAL_BORDER =
   "border-l-4 border-transparent group-hover:border-gray-400 group-hover:bg-gray-50 dark:group-hover:bg-slate-800";
 
@@ -85,11 +64,15 @@ export default function FancySidebar() {
   // Animation for sidebar show/hide
   const sidebarAnim =
     "transition-all duration-300 " +
-    (collapsed
-      ? "w-14 md:w-16"
-      : "w-64 md:w-80");
-
+    (collapsed ? "w-14 md:w-16" : "w-64 md:w-80");
   const location = useLocation();
+
+  // For animated transition between sidebar groups
+  const [animKey, setAnimKey] = React.useState(tab);
+  React.useEffect(() => {
+    // Animate out then in when the tab changes
+    setAnimKey(tab);
+  }, [tab]);
 
   return (
     <div className="fixed top-0 left-0 z-30 h-screen flex">
@@ -164,41 +147,53 @@ export default function FancySidebar() {
                 {sidebarCategories.find((c) => c.key === tab)?.label}
               </SidebarGroupLabel>
               <SidebarGroupContent>
-                <SidebarMenu>
-                  {sidebarCategories
-                    .find((c) => c.key === tab)
-                    ?.items.map((item) => (
-                      <SidebarMenuItem key={item.label}>
-                        <SidebarMenuButton
-                          asChild
-                          isActive={location.pathname === item.to}
-                          variant={location.pathname === item.to ? "outline" : "default"}
-                          className={clsx(
-                            "group transition-all duration-200 overflow-hidden rounded-xl my-0.5 px-2",
-                            NEUTRAL_BORDER,
-                            collapsed && "px-1 py-2 justify-center"
-                          )}
-                        >
-                          {item.external ? (
-                            <a
-                              href={item.to}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-3"
-                            >
-                              <item.icon className="h-5 w-5 text-gray-500 dark:text-gray-300 group-hover:text-neutral-900 dark:group-hover:text-neutral-100" />
-                              {!collapsed && <span>{item.label}</span>}
-                            </a>
-                          ) : (
-                            <Link to={item.to} className="flex items-center gap-3">
-                              <item.icon className="h-5 w-5 text-gray-500 dark:text-gray-300 group-hover:text-neutral-900 dark:group-hover:text-neutral-100" />
-                              {!collapsed && <span>{item.label}</span>}
-                            </Link>
-                          )}
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
-                </SidebarMenu>
+                {/* Add transition: animate between sidebar group menu categories */}
+                <div
+                  key={animKey}
+                  className={clsx(
+                    "relative min-h-[50px] transition-all duration-300",
+                    "animate-fade-in-move"
+                  )}
+                  style={{
+                    animation: "sidebar-fade-slide-in 320ms cubic-bezier(0.4, 0, 0.2, 1)",
+                  }}
+                >
+                  <SidebarMenu>
+                    {sidebarCategories
+                      .find((c) => c.key === tab)
+                      ?.items.map((item) => (
+                        <SidebarMenuItem key={item.label}>
+                          <SidebarMenuButton
+                            asChild
+                            isActive={location.pathname === item.to}
+                            variant={location.pathname === item.to ? "outline" : "default"}
+                            className={clsx(
+                              "group transition-all duration-200 overflow-hidden rounded-xl my-0.5 px-2",
+                              NEUTRAL_BORDER,
+                              collapsed && "px-1 py-2 justify-center"
+                            )}
+                          >
+                            {item.external ? (
+                              <a
+                                href={item.to}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3"
+                              >
+                                <item.icon className="h-5 w-5 text-gray-500 dark:text-gray-300 group-hover:text-neutral-900 dark:group-hover:text-neutral-100" />
+                                {!collapsed && <span>{item.label}</span>}
+                              </a>
+                            ) : (
+                              <Link to={item.to} className="flex items-center gap-3">
+                                <item.icon className="h-5 w-5 text-gray-500 dark:text-gray-300 group-hover:text-neutral-900 dark:group-hover:text-neutral-100" />
+                                {!collapsed && <span>{item.label}</span>}
+                              </Link>
+                            )}
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      ))}
+                  </SidebarMenu>
+                </div>
               </SidebarGroupContent>
             </SidebarGroup>
             {/* Neutral subtle logo at bottom */}
@@ -223,8 +218,25 @@ export default function FancySidebar() {
           </SidebarContent>
         </Sidebar>
       </SidebarProvider>
+      {/* Custom fade+slide animation styles */}
+      <style>{`
+        @keyframes sidebar-fade-slide-in {
+          from {
+            opacity: 0;
+            transform: translateY(16px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in-move {
+          animation: sidebar-fade-slide-in 320ms cubic-bezier(0.4,0,0.2,1);
+        }
+      `}</style>
     </div>
   );
 }
 
 // File is >200 lines. If you'd like this file to be split up and easier to maintain, please ask for a refactor!
+
