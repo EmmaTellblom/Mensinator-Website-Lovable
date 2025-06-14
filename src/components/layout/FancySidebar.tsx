@@ -23,8 +23,9 @@ import {
   Users,
   Github,
   Menu as MenuIcon,
-  MessageCircle, // use this as the Discord icon
+  MessageCircle,
 } from "lucide-react";
+import { DiscordIcon } from "@/components/icons/DiscordIcon";
 
 // Sidebar navigation items with icon references
 const sidebarItems = [
@@ -55,7 +56,7 @@ const iconsMap: Record<string, React.ComponentType<any>> = {
   FAQ: HelpCircle,
   "The Team": Users,
   GitHub: Github,
-  Discord: MessageCircle, // <-- use MessageCircle icon for Discord
+  Discord: DiscordIcon, // Use our new unified Discord icon
 };
 
 export default function FancySidebar() {
@@ -106,12 +107,7 @@ export default function FancySidebar() {
                 className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground"
                 aria-label="Discord"
               >
-                <img
-                  src="/icons/discord.svg"
-                  alt="Discord"
-                  className="h-5 w-5 text-inherit fill-current stroke-current"
-                  style={{ color: 'inherit' }}
-                />
+                <DiscordIcon width={20} height={20} />
               </a>
             </div>
           </div>
@@ -183,12 +179,7 @@ export default function FancySidebar() {
                             rel="noopener noreferrer"
                             className="text-sidebar-foreground"
                           >
-                            <img
-                              src="/icons/discord.svg"
-                              alt="Discord"
-                              className="h-4 w-4 text-inherit fill-current stroke-current"
-                              style={{ color: 'inherit' }}
-                            />
+                            <DiscordIcon className="h-4 w-4" />
                             <span>Discord</span>
                           </a>
                         </SidebarMenuButton>
@@ -270,12 +261,7 @@ export default function FancySidebar() {
                     rel="noopener noreferrer"
                     className="text-sidebar-foreground"
                   >
-                    <img
-                      src="/icons/discord.svg"
-                      alt="Discord"
-                      className="h-4 w-4 text-inherit fill-current stroke-current"
-                      style={{ color: 'inherit' }}
-                    />
+                    <DiscordIcon className="h-4 w-4" />
                     <span>Discord</span>
                   </a>
                 </SidebarMenuButton>
