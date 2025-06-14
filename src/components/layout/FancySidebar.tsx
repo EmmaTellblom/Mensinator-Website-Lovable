@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Sidebar,
@@ -124,23 +123,27 @@ export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarPr
       {/* Animated main sidebar */}
       {/* This panel is hidden on <md screens via "hidden md:flex" */}
       {/* Its width on md+ is controlled by CSS variables now */}
-      <SidebarProvider open={!collapsed} onOpenChange={(isOpen) => setCollapsed(!isOpen)}>
+      <SidebarProvider
+        open={!collapsed}
+        onOpenChange={(isOpen) => setCollapsed(!isOpen)}
+        style={{
+          '--sidebar-width': '320px', // Expanded width for md+
+          '--sidebar-width-icon': '64px', // Collapsed width for md+
+        } as React.CSSProperties} // Cast to React.CSSProperties to allow CSS custom properties
+      >
         <Sidebar
           collapsible="icon" // Use icon collapsing behavior from shadcn/ui
           className={clsx(
             "relative h-screen hidden md:flex flex-col items-stretch group/sidebar", // Note: "hidden md:flex"
             GLASS,
             "shadow-[0_8px_32px_0_rgba(31,38,135,0.12)]"
-            // Removed sidebarAnim (width classes) and transition-all here
-            // shadcn/ui Sidebar handles its own width and transition based on collapsible="icon" and data-state
           )}
           style={{
-            '--sidebar-width': '320px', // Expanded width for md+
-            '--sidebar-width-icon': '64px', // Collapsed width for md+
+            // These styles are specific to this instance of Sidebar, not width overrides
             maxWidth: "90vw",
             borderLeft: "4px solid transparent",
             overflow: "hidden", // Keep overflow hidden
-          } as React.CSSProperties} // Cast to React.CSSProperties to allow CSS custom properties
+          } as React.CSSProperties} // Cast to React.CSSProperties
         >
           <SidebarContent className="h-full flex flex-col">
             <SidebarGroup>
@@ -173,7 +176,7 @@ export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarPr
                             className={clsx(
                               "group transition-all duration-200 overflow-hidden rounded-xl my-0.5 px-2",
                               NEUTRAL_BORDER,
-                              collapsed && "px-1 py-2 justify-center"
+                              collapsed && "px-1 py-2 justify-center" // Adjusted for collapsed state
                             )}
                           >
                             {item.external ? (
@@ -242,4 +245,3 @@ export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarPr
 }
 
 // File is >200 lines. If you'd like this file to be split up and easier to maintain, please ask for a refactor!
-
