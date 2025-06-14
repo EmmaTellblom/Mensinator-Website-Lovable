@@ -55,7 +55,7 @@ const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-8 bg-gray-100 dark:bg-slate-900">
+      <section className="relative bg-gray-100 dark:bg-slate-900 py-8">
         <div className="container mx-auto px-4 py-12 md:py-24 flex flex-col items-center text-center">
           <img 
             src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png" 
@@ -79,7 +79,7 @@ const Home = () => {
           </h2>
 
           {/* Button Group: Android, F-Droid, IzzyOnDroid, Manual */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-2xl mx-auto mb-2 animate-fade-in">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-2xl mx-auto mb-4 animate-fade-in">
             <Button 
               asChild 
               size="lg"
@@ -140,7 +140,7 @@ const Home = () => {
       </section>
 
       {/* Features Section: Why Choose Mensinator? */}
-      <section className="py-8 bg-gray-100 dark:bg-slate-900">
+      <section className="bg-gray-100 dark:bg-slate-900 py-8">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-6">
             Why Choose Mensinator?
