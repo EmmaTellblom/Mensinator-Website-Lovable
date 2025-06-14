@@ -44,7 +44,7 @@ const Home = () => {
                 className="flex items-center gap-2 justify-center"
               >
                 <Download className="h-5 w-5" />
-                Download for Android
+                Download from Google Play
               </a>
             </Button>
             <Button
