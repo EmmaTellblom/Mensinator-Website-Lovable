@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Book, Download, Shield, Lock, Smartphone, Github, Images } from 'lucide-react';
@@ -8,6 +9,7 @@ import {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  type CarouselApi
 } from "@/components/ui/carousel";
 
 // Real Mensinator app screenshots
@@ -39,6 +41,17 @@ const screenshots = [
 ];
 
 const Home = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Expose carousel API to sync center slide index
+  const handleSetApi = (api: CarouselApi | null) => {
+    if (!api) return;
+    setCurrentIndex(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrentIndex(api.selectedScrollSnap());
+    });
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -136,24 +149,65 @@ const Home = () => {
           <p className="text-muted-foreground mb-8 max-w-2xl text-center">
             Get a glimpse of Mensinator! Here are some real screens to show how simple and private your period tracking experience can be.
           </p>
-          {/* Arrows visually outside, but INSIDE Carousel context */}
-          <div className="flex w-full items-center justify-center gap-6">
-            <Carousel className="relative w-[320px] max-w-full" opts={{ loop: true }}>
+          <div className="relative flex w-full items-center justify-center gap-6">
+            {/* Carousel with side image previews and gradient fade */}
+            <Carousel
+              className="relative w-[410px] max-w-full"
+              opts={{
+                loop: true,
+                align: "center",
+                slidesToScroll: 1,
+                skipSnaps: false,
+                containScroll: false,
+              }}
+              setApi={handleSetApi}
+            >
               <CarouselContent>
-                {screenshots.map((shot, idx) => (
-                  <CarouselItem key={idx} className="flex flex-col items-center">
-                    <img
-                      src={shot.url}
-                      alt={shot.alt}
-                      className="rounded-xl shadow-lg w-full h-auto object-contain"
-                      style={{ maxHeight: '460px' }}
-                      loading="lazy"
-                    />
-                    <span className="text-xs text-muted-foreground mt-2 text-center">{shot.alt}</span>
-                  </CarouselItem>
-                ))}
+                {screenshots.map((shot, idx) => {
+                  // Compute relation to center index (-1,0,1) for style
+                  let offset = idx - currentIndex;
+                  if (offset > screenshots.length / 2) offset -= screenshots.length;
+                  if (offset < -screenshots.length / 2) offset += screenshots.length;
+                  // center slide: scale 1, sides: scale 0.8, faded, others: hidden
+                  const isCenter = offset === 0;
+                  const isSide = Math.abs(offset) === 1;
+                  let style: React.CSSProperties = {
+                    transition: 'transform 0.4s, opacity 0.4s',
+                    transform: isCenter ? 'scale(1.0)' : isSide ? 'scale(0.8)' : 'scale(0.6)',
+                    opacity: isCenter ? 1 : isSide ? 0.4 : 0,
+                    zIndex: isCenter ? 2 : isSide ? 1 : 0,
+                  };
+                  return (
+                    <CarouselItem key={idx} className="flex flex-col items-center basis-[80%] sm:basis-[68%]">
+                      <div className="relative w-full flex items-center justify-center">
+                        <img
+                          src={shot.url}
+                          alt={shot.alt}
+                          className="w-full h-auto object-contain select-none rounded-xl"
+                          style={{ maxHeight: '460px', ...style, boxShadow: isCenter ? '0 6px 24px 2px rgba(0,0,0,0.14)' : '' }}
+                          loading="lazy"
+                          draggable={false}
+                        />
+                        {/* Gradient overlay if side image */}
+                        {isSide && (
+                          <div
+                            className={
+                              "absolute top-0 left-0 w-full h-full pointer-events-none"
+                            }
+                            style={{
+                              background: `linear-gradient(${
+                                offset === -1
+                                  ? "90deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.01) 40%"
+                                  : "270deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.01) 40%"
+                              })`,
+                            }}
+                          />
+                        )}
+                      </div>
+                    </CarouselItem>
+                  );
+                })}
               </CarouselContent>
-              {/* Move arrows outside of images but inside Carousel provider */}
               <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2 z-10" />
               <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2 z-10" />
             </Carousel>
