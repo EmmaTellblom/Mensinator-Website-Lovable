@@ -65,11 +65,10 @@ const Home = () => {
             Mensinator
           </h1>
           <p className="text-xl md:text-2xl mb-4 max-w-3xl">
-            We don't track your data - you do. Period.
+            We don't track your data – you do. Period.
           </p>
-          <p className="text-lg mb-8 max-w-3xl">
-            A private period tracking app that keeps all your data on your device.
-            No signup, no cloud storage, just privacy-focused period tracking.
+          <p className="text-lg mb-4 max-w-3xl">
+            Mensinator is a private period tracker that stores all your data safely on your own device. No account needed, no cloud required—just simple, privacy-first tracking.
           </p>
 
           {/* "Get Started" Heading matches style of "App Screenshots" */}
