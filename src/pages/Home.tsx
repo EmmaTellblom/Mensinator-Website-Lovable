@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Book, Download, Shield, Lock, Smartphone, Github, Images } from 'lucide-react';
+import { Book, Download, Shield, Lock, Smartphone, Github } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -138,7 +139,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section - moved here, with decreased section padding/margin */}
+      {/* Features Section: Why Choose Mensinator? */}
       <section className="py-8 bg-gray-100 dark:bg-slate-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-6">
@@ -323,3 +324,4 @@ const Home = () => {
 };
 
 export default Home;
+
