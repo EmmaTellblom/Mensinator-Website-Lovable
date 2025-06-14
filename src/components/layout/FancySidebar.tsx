@@ -71,11 +71,7 @@ export default function FancySidebar() {
         {/* Mobile icon bar */}
         <nav className="fixed z-30 top-0 left-0 w-14 h-screen bg-sidebar border-r flex flex-col justify-between items-center">
           <div className="flex flex-col items-center py-4">
-            <img
-              src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
-              className="h-8 w-8 rounded-full mb-3"
-              alt="Mensinator logo"
-            />
+            {/* Removed logo here */}
             <div className="flex flex-col gap-2">
               {sidebarItems.map((item) => {
                 const Icon = iconsMap[item.label] || MenuIcon;
@@ -118,15 +114,8 @@ export default function FancySidebar() {
               className="absolute top-0 left-0 h-full w-64 bg-sidebar shadow-xl transition-transform"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center gap-2 p-4 border-b">
-                <img
-                  src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
-                  className="h-8 w-8 rounded-full"
-                  alt="Mensinator logo"
-                />
-                <span className="font-bold text-lg">Mensinator</span>
-              </div>
-              {/* Full nav */}
+              {/* Removed logo & app name here */}
+              {/* Full nav remains the same */}
               <SidebarContent>
                 <SidebarGroup>
                   <SidebarGroupLabel>Navigation</SidebarGroupLabel>
@@ -204,20 +193,11 @@ export default function FancySidebar() {
     );
   }
 
-  // Desktop: behavior as before (sidebar can be expanded/collapsed)
+  // Desktop: behavior as before, but logo and name removed
   return (
     <Sidebar collapsible="icon" className="border-r">
       <SidebarContent>
-        <div className="flex items-center gap-2 p-4 border-b">
-          <img
-            src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
-            className="h-8 w-8 rounded-full"
-            alt="Mensinator logo"
-          />
-          <span className="font-bold text-lg group-data-[collapsible=icon]:hidden">
-            Mensinator
-          </span>
-        </div>
+        {/* Removed logo and app name here */}
         <SidebarGroup>
           <SidebarGroupLabel>Navigation</SidebarGroupLabel>
           <SidebarGroupContent>
