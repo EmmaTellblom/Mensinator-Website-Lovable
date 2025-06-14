@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 
 interface AndroidPhoneFrameProps {
@@ -32,35 +31,25 @@ const AndroidPhoneFrame: React.FC<AndroidPhoneFrameProps> = ({
         className="absolute left-[18px] top-[28px] w-[184px] h-[421px] rounded-[20px] overflow-hidden z-30 bg-black flex items-center justify-center"
         style={{
           boxShadow: "inset 0 2px 6px 0 #00000060",
-          border: "2px solid #00ff00" // bright green border for debug
         }}
         data-testid="android-phone-screen"
       >
-        {/* Debug label above image */}
-        <span className="absolute top-1 left-1 z-50 bg-white text-red-600 text-xs px-1 pointer-events-none opacity-70">
-          debug: top
-        </span>
         {imageUrl && !hasError ? (
-          <>
-            <span className="absolute bottom-1 right-1 z-50 bg-white text-blue-600 text-xs px-1 pointer-events-none opacity-70">
-              debug: img-loaded
-            </span>
-            <img
-              src={imageUrl}
-              alt={alt || ""}
-              className="w-full h-full object-contain bg-lime-400 border-4 border-red-500"
-              loading="lazy"
-              draggable={false}
-              style={{ background: "#bfff00" }}
-              onLoad={() => {
-                console.log("[AndroidPhoneFrame] Image loaded:", imageUrl);
-              }}
-              onError={() => {
-                console.error("[AndroidPhoneFrame] Image failed to load:", imageUrl);
-                setHasError(true);
-              }}
-            />
-          </>
+          <img
+            src={imageUrl}
+            alt={alt || ""}
+            className="w-full h-full object-contain"
+            loading="lazy"
+            draggable={false}
+            style={{ background: "#101010" }}
+            onLoad={() => {
+              console.log("[AndroidPhoneFrame] Image loaded:", imageUrl);
+            }}
+            onError={() => {
+              console.error("[AndroidPhoneFrame] Image failed to load:", imageUrl);
+              setHasError(true);
+            }}
+          />
         ) : hasError ? (
           <div className="flex flex-col items-center justify-center w-full h-full bg-yellow-100 text-red-700 p-2 z-50">
             <span className="text-base font-semibold">Image failed to load!</span>
