@@ -7,7 +7,6 @@ interface AndroidPhoneFrameProps {
   className?: string;
 }
 
-// 9:19.5 aspect ratio (screen), sized for carousel, with black bezels, earpiece, buttons.
 const AndroidPhoneFrame: React.FC<AndroidPhoneFrameProps> = ({
   imageUrl,
   alt,
@@ -29,16 +28,29 @@ const AndroidPhoneFrame: React.FC<AndroidPhoneFrameProps> = ({
         style={{
           boxShadow: "inset 0 2px 6px 0 #00000060",
         }}
+        data-testid="android-phone-screen"
       >
         {imageUrl && !hasError ? (
           <img
             src={imageUrl}
             alt={alt || ""}
-            className="w-full h-full object-contain bg-black"
+            className="w-full h-full object-contain bg-black border-4 border-red-400"
             loading="lazy"
             draggable={false}
-            onError={() => setHasError(true)}
+            style={{ background: "#fff" }}
+            onLoad={() => {
+              console.log("[AndroidPhoneFrame] Image loaded:", imageUrl);
+            }}
+            onError={() => {
+              console.error("[AndroidPhoneFrame] Image failed to load:", imageUrl);
+              setHasError(true);
+            }}
           />
+        ) : hasError ? (
+          <div className="flex flex-col items-center justify-center w-full h-full bg-yellow-100 text-red-700 p-2">
+            <span className="text-sm font-semibold">Image failed to load!</span>
+            <span className="text-xs break-all">{imageUrl}</span>
+          </div>
         ) : (
           <span className="text-xs text-gray-400">Image not available</span>
         )}
