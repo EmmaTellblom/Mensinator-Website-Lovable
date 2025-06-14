@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -145,7 +144,7 @@ const Home = () => {
           <h2 className="text-3xl font-bold text-center mb-6">
             Why Choose Mensinator?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
                 <Shield className="h-6 w-6 text-burgundy" />
@@ -175,6 +174,26 @@ const Home = () => {
                 Works completely offline. No internet connection required to use any feature of the app.
               </p>
             </div>
+            
+            {/* New Card: Open Source & Transparent */}
+            <a
+              href="https://github.com/EmmaTellblom/Mensinator"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border transition-colors hover:bg-accent/40 focus-visible:ring-2 focus-visible:ring-ring"
+              tabIndex={0}
+              aria-label="View Mensinator code on GitHub"
+            >
+              <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
+                <Github className="h-6 w-6 text-burgundy" />
+              </div>
+              <h3 className="text-xl font-medium mb-2 underline decoration-dotted underline-offset-4 transition-colors hover:text-slate-900 dark:hover:text-white">
+                Open Source & Transparent
+              </h3>
+              <p className="text-muted-foreground">
+                Our code is open source. You can check everything yourself on GitHub—nothing to hide!
+              </p>
+            </a>
           </div>
         </div>
       </section>
@@ -324,4 +343,3 @@ const Home = () => {
 };
 
 export default Home;
-
