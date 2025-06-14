@@ -61,20 +61,14 @@ interface FancySidebarProps {
 }
 
 export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarProps) {
+  console.log('FancySidebar rendered with collapsed:', collapsed); // For debugging
   // Track current tab
   const [tab, setTab] = React.useState(sidebarCategories[0].key);
-  // collapsed state is now managed by ModernLayout
-
-  // Animation for sidebar show/hide
-  const sidebarAnim =
-    "transition-all duration-300 " +
-    (collapsed ? "w-14 md:w-16" : "w-64 md:w-80"); // md:w-16 is 64px, md:w-80 is 320px
   const location = useLocation();
 
   // For animated transition between sidebar groups
   const [animKey, setAnimKey] = React.useState(tab);
   React.useEffect(() => {
-    // Animate out then in when the tab changes
     setAnimKey(tab);
   }, [tab]);
 
@@ -128,35 +122,36 @@ export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarPr
       </div>
       {/* Animated main sidebar */}
       {/* This panel is hidden on <md screens via "hidden md:flex" */}
-      {/* Its width on md+ is md:w-16 (64px) when collapsed, md:w-80 (320px) when expanded */}
-      <SidebarProvider>
+      {/* Its width on md+ is controlled by CSS variables now */}
+      <SidebarProvider open={!collapsed} onOpenChange={(isOpen) => setCollapsed(!isOpen)}>
         <Sidebar
+          collapsible="icon" // Use icon collapsing behavior from shadcn/ui
           className={clsx(
             "relative h-screen hidden md:flex flex-col items-stretch group/sidebar", // Note: "hidden md:flex"
-            sidebarAnim, // Uses collapsed prop
             GLASS,
-            "shadow-[0_8px_32px_0_rgba(31,38,135,0.12)] transition-all duration-300"
+            "shadow-[0_8px_32px_0_rgba(31,38,135,0.12)]"
+            // Removed sidebarAnim (width classes) and transition-all here
+            // shadcn/ui Sidebar handles its own width and transition based on collapsible="icon" and data-state
           )}
           style={{
-            // These widths are effectively controlled by sidebarAnim classes (w-14 md:w-16 vs w-64 md:w-80)
-            // For md screens: 64px collapsed, 320px expanded
-            minWidth: collapsed ? "56px" : "256px", // Fallback for non-md, though panel is hidden on non-md
-            width: collapsed ? "64px" : "320px", // Using explicit md+ widths here for clarity with layout calc
+            // Override default shadcn/ui sidebar widths
+            '--sidebar-width': '320px', // Expanded width for md+
+            '--sidebar-width-icon': '64px', // Collapsed width for md+
+            // Keep other necessary styles
             maxWidth: "90vw",
             borderLeft: "4px solid transparent",
-            overflow: "hidden",
+            overflow: "hidden", // Keep overflow hidden
           }}
         >
           <SidebarContent className="h-full flex flex-col">
             <SidebarGroup>
               <SidebarGroupLabel className={clsx(
-                "pl-2 py-3 uppercase text-xs tracking-wider font-bold text-gray-700 dark:text-gray-300 transition-all",
-                collapsed && "opacity-0 pointer-events-none"
+                "pl-2 py-3 uppercase text-xs tracking-wider font-bold text-gray-700 dark:text-gray-300 transition-opacity duration-200", // Simpler transition
+                collapsed && "opacity-0 pointer-events-none" // Control visibility based on our `collapsed` prop
               )}>
                 {sidebarCategories.find((c) => c.key === tab)?.label}
               </SidebarGroupLabel>
               <SidebarGroupContent>
-                {/* Add transition: animate between sidebar group menu categories */}
                 <div
                   key={animKey}
                   className={clsx(
@@ -179,7 +174,7 @@ export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarPr
                             className={clsx(
                               "group transition-all duration-200 overflow-hidden rounded-xl my-0.5 px-2",
                               NEUTRAL_BORDER,
-                              collapsed && "px-1 py-2 justify-center" // Adjusted for collapsed state
+                              collapsed && "px-1 py-2 justify-center"
                             )}
                           >
                             {item.external ? (
@@ -208,7 +203,7 @@ export default function FancySidebar({ collapsed, setCollapsed }: FancySidebarPr
             {/* Neutral subtle logo at bottom */}
             <div className={clsx(
               "mt-auto pb-6 flex flex-col items-center justify-center",
-              collapsed && "pl-0" // Adjusted for collapsed state
+              collapsed && "pl-0"
             )}>
               <img
                 src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png"
