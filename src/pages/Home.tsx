@@ -165,7 +165,7 @@ const Home = () => {
               </p>
             </div>
             
-            {/* Open Source & Transparent card (updated) */}
+            {/* Open Source & Transparent card */}
             <div className="flex flex-col items-center text-center p-6 rounded-lg bg-background border border-border">
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-accent mb-4">
                 <Github className="h-6 w-6 text-burgundy" />
@@ -174,7 +174,7 @@ const Home = () => {
                 Open Source & Transparent
               </h3>
               <p className="text-muted-foreground">
-                Our project is open source—anyone can check the code and contribute. We welcome help and ideas from everyone!
+                The code is open source, and everyone can review it. Anyone can contribute suggestions, improvements, or features to make the app even better.
               </p>
             </div>
           </div>
