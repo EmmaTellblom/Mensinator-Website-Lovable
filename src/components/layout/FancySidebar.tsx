@@ -44,7 +44,7 @@ const externalLinks = [
   {
     label: "Discord",
     to: "https://discord.gg/tHA2k3bFRN",
-    icon: MessageCircle, // <-- use MessageCircle icon for Discord
+    icon: null, // Handled separately
   },
 ];
 
@@ -92,6 +92,16 @@ export default function FancySidebar() {
                   </Link>
                 );
               })}
+              {/* Discord icon for mobile */}
+              <a
+                href="https://discord.gg/tHA2k3bFRN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground"
+                aria-label="Discord"
+              >
+                <img src="/icons/discord.svg" alt="Discord" className="h-5 w-5" />
+              </a>
             </div>
           </div>
           <button
@@ -146,23 +156,32 @@ export default function FancySidebar() {
                   <SidebarGroupLabel>Community</SidebarGroupLabel>
                   <SidebarGroupContent>
                     <SidebarMenu>
-                      {externalLinks.map((item) => {
-                        const Icon = iconsMap[item.label] || MenuIcon;
-                        return (
-                          <SidebarMenuItem key={item.to}>
-                            <SidebarMenuButton asChild>
-                              <a
-                                href={item.to}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                              >
-                                <Icon className="h-4 w-4" />
-                                <span>{item.label}</span>
-                              </a>
-                            </SidebarMenuButton>
-                          </SidebarMenuItem>
-                        );
-                      })}
+                      {/* GitHub */}
+                      <SidebarMenuItem key="github">
+                        <SidebarMenuButton asChild>
+                          <a
+                            href="https://github.com/EmmaTellblom/Mensinator"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="h-4 w-4" />
+                            <span>GitHub</span>
+                          </a>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                      {/* Discord */}
+                      <SidebarMenuItem key="discord">
+                        <SidebarMenuButton asChild>
+                          <a
+                            href="https://discord.gg/tHA2k3bFRN"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <img src="/icons/discord.svg" alt="Discord" className="h-4 w-4" />
+                            <span>Discord</span>
+                          </a>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
                     </SidebarMenu>
                   </SidebarGroupContent>
                 </SidebarGroup>
@@ -226,23 +245,32 @@ export default function FancySidebar() {
           <SidebarGroupLabel>Community</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {externalLinks.map((item) => {
-                const Icon = iconsMap[item.label] || MenuIcon;
-                return (
-                  <SidebarMenuItem key={item.to}>
-                    <SidebarMenuButton asChild>
-                      <a
-                        href={item.to}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Icon className="h-4 w-4" />
-                        <span>{item.label}</span>
-                      </a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                );
-              })}
+              {/* GitHub */}
+              <SidebarMenuItem key="github">
+                <SidebarMenuButton asChild>
+                  <a
+                    href="https://github.com/EmmaTellblom/Mensinator"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="h-4 w-4" />
+                    <span>GitHub</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              {/* Discord */}
+              <SidebarMenuItem key="discord">
+                <SidebarMenuButton asChild>
+                  <a
+                    href="https://discord.gg/tHA2k3bFRN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="/icons/discord.svg" alt="Discord" className="h-4 w-4" />
+                    <span>Discord</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
