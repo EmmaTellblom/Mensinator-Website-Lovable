@@ -141,13 +141,12 @@ const Home = () => {
       {/* Screenshot Carousel Section */}
       <section className="bg-gray-100 dark:bg-slate-900 py-8">
         <div className="container mx-auto px-4 flex flex-col items-center">
-          <div className="flex items-center gap-2 mb-4">
-            <Images className="h-6 w-6 text-primary" />
-            <h2 className="text-2xl font-semibold">App Screenshots</h2>
-          </div>
+          {/* Updated heading here */}
+          <h2 className="text-3xl font-bold text-center mb-12">
+            App Screenshots
+          </h2>
           {/* Carousel container with larger area */}
           <div className="relative flex w-full items-center justify-center gap-6">
-            {/* Increased width for better screenshot display */}
             <Carousel
               className="relative w-[650px] max-w-full"
               opts={{
