@@ -145,8 +145,8 @@ const Home = () => {
                     <img
                       src={shot.url}
                       alt={shot.alt}
-                      className="rounded-xl shadow-lg w-full h-auto object-contain bg-black"
-                      style={{ maxHeight: '460px', background: "#101010" }}
+                      className="rounded-xl shadow-lg w-full h-auto object-contain"
+                      style={{ maxHeight: '460px' }}
                       loading="lazy"
                     />
                     <span className="text-xs text-muted-foreground mt-2 text-center">{shot.alt}</span>
