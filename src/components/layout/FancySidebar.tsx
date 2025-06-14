@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   Sidebar,
@@ -23,6 +24,8 @@ import {
   Users,
   Github,
   Menu as MenuIcon,
+  // Import the Discord icon
+  Discord,
 } from "lucide-react";
 
 // Sidebar navigation items with icon references
@@ -40,6 +43,11 @@ const externalLinks = [
     to: "https://github.com/EmmaTellblom/Mensinator",
     icon: Github,
   },
+  {
+    label: "Discord",
+    to: "https://discord.gg/tHA2k3bFRN",
+    icon: Discord,
+  },
 ];
 
 const iconsMap: Record<string, React.ComponentType<any>> = {
@@ -49,6 +57,7 @@ const iconsMap: Record<string, React.ComponentType<any>> = {
   FAQ: HelpCircle,
   "The Team": Users,
   GitHub: Github,
+  Discord: Discord,
 };
 
 export default function FancySidebar() {
