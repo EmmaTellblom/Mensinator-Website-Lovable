@@ -75,19 +75,19 @@ const Home = () => {
             Get Started with Mensinator
           </h2>
 
-          {/* Responsive Button Grid (stacks on mobile, row on wider screens) */}
+          {/* Responsive Button Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-2xl mx-auto animate-fade-in">
-            {/* Each button takes full width of its grid cell, equal height via min-h */}
+            {/* Each button stretches to fill cell and uses text-nowrap to avoid ugly line breaks */}
             <Button 
               asChild 
               size="lg"
-              className="w-full min-h-[56px] flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://play.google.com/store/apps/details?id=com.mensinator.app&hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full"
+                className="flex items-center gap-2 justify-center w-full min-w-0 text-nowrap"
               >
                 <Download className="h-5 w-5" />
                 <span className="truncate">Download from Google Play</span>
@@ -96,13 +96,13 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="w-full min-h-[56px] flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://f-droid.org/en/packages/com.mensinator.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full"
+                className="flex items-center gap-2 justify-center w-full min-w-0 text-nowrap"
               >
                 <Download className="h-5 w-5" />
                 <span className="truncate">Download from F-Droid</span>
@@ -111,13 +111,13 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="w-full min-h-[56px] flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://apt.izzysoft.de/fdroid/index/apk/com.mensinator.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full"
+                className="flex items-center gap-2 justify-center w-full min-w-0 text-nowrap"
               >
                 <Download className="h-5 w-5" />
                 <span className="truncate">Download from IzzyOnDroid</span>
@@ -126,9 +126,9 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="w-full min-h-[56px] flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
-              <Link to="/manual" className="flex items-center gap-2 justify-center w-full">
+              <Link to="/manual" className="flex items-center gap-2 justify-center w-full min-w-0 text-nowrap">
                 <Book className="h-5 w-5" />
                 <span className="truncate">Read User Manual</span>
               </Link>
