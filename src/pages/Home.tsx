@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
-import { Book, Download, Shield, Lock, Smartphone, Github } from 'lucide-react';
+import { Book, Download, Shield, Lock, Github } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
@@ -76,61 +77,61 @@ const Home = () => {
           </h2>
 
           {/* Responsive Button Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-2xl mx-auto animate-fade-in">
-            {/* Each button stretches to fill cell and uses text-nowrap to avoid ugly line breaks */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl mx-auto animate-fade-in">
+            {/* Use flex-1 and min-w to ensure equal, wide-enough buttons */}
             <Button 
               asChild 
               size="lg"
-              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="flex-1 min-w-[220px] w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://play.google.com/store/apps/details?id=com.mensinator.app&hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full min-w-0 text-nowrap"
+                className="flex items-center gap-2 justify-center w-full"
               >
                 <Download className="h-5 w-5" />
-                <span className="truncate">Download from Google Play</span>
+                <span>Download from Google Play</span>
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="flex-1 min-w-[220px] w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://f-droid.org/en/packages/com.mensinator.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full min-w-0 text-nowrap"
+                className="flex items-center gap-2 justify-center w-full"
               >
                 <Download className="h-5 w-5" />
-                <span className="truncate">Download from F-Droid</span>
+                <span>Download from F-Droid</span>
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="flex-1 min-w-[220px] w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://apt.izzysoft.de/fdroid/index/apk/com.mensinator.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full min-w-0 text-nowrap"
+                className="flex items-center gap-2 justify-center w-full"
               >
                 <Download className="h-5 w-5" />
-                <span className="truncate">Download from IzzyOnDroid</span>
+                <span>Download from IzzyOnDroid</span>
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="flex-1 min-w-[220px] w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
-              <Link to="/manual" className="flex items-center gap-2 justify-center w-full min-w-0 text-nowrap">
+              <Link to="/manual" className="flex items-center gap-2 justify-center w-full">
                 <Book className="h-5 w-5" />
-                <span className="truncate">Read User Manual</span>
+                <span>Read User Manual</span>
               </Link>
             </Button>
           </div>
@@ -325,3 +326,4 @@ const Home = () => {
 };
 
 export default Home;
+
