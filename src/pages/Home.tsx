@@ -90,7 +90,7 @@ const Home = () => {
                 tabIndex={-1}
               >
                 <Download className="h-5 w-5 flex-shrink-0" />
-                <span className="truncate block px-1 whitespace-nowrap">Download from Google Play</span>
+                <span className="block px-1 text-center">Download from Google Play</span>
               </a>
             </Button>
             <Button
@@ -106,7 +106,7 @@ const Home = () => {
                 tabIndex={-1}
               >
                 <Download className="h-5 w-5 flex-shrink-0" />
-                <span className="truncate block px-1 whitespace-nowrap">Download from F-Droid</span>
+                <span className="block px-1 text-center">Download from F-Droid</span>
               </a>
             </Button>
             <Button
@@ -122,7 +122,7 @@ const Home = () => {
                 tabIndex={-1}
               >
                 <Download className="h-5 w-5 flex-shrink-0" />
-                <span className="truncate block px-1 whitespace-nowrap">Download from IzzyOnDroid</span>
+                <span className="block px-1 text-center">Download from IzzyOnDroid</span>
               </a>
             </Button>
             <Button
@@ -132,7 +132,7 @@ const Home = () => {
             >
               <Link to="/manual" className="flex items-center gap-2 justify-center w-full min-w-0" tabIndex={-1}>
                 <Book className="h-5 w-5 flex-shrink-0" />
-                <span className="truncate block px-1 whitespace-nowrap">Read User Manual</span>
+                <span className="block px-1 text-center">Read User Manual</span>
               </Link>
             </Button>
           </div>
