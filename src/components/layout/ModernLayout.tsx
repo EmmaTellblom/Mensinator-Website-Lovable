@@ -1,20 +1,16 @@
 
 import React from "react";
-import { SidebarProvider } from "@/components/ui/sidebar";
 import FancySidebar from "./FancySidebar";
 
-const ModernLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const ModernLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <SidebarProvider>
-      <div className="min-h-screen w-full flex bg-slate-100 dark:bg-slate-900 transition-colors duration-300">
-        <FancySidebar />
-        <main className="flex-1 p-6 ml-14 md:ml-0">
-          {children}
-        </main>
-      </div>
-    </SidebarProvider>
+    <div className="flex min-h-screen w-full bg-background">
+      <FancySidebar />
+      <main className="flex-1 flex flex-col w-full min-w-0">
+        {children}
+      </main>
+    </div>
   );
 };
 
 export default ModernLayout;
-
