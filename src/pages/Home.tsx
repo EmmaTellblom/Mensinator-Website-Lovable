@@ -77,60 +77,62 @@ const Home = () => {
 
           {/* Responsive Button Grid */}
           <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full">
-            {/* Each button: remove min-width and use w-full */}
             <Button 
               asChild 
               size="lg"
-              className="w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://play.google.com/store/apps/details?id=com.mensinator.app&hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full"
+                className="flex items-center gap-2 justify-center w-full min-w-0"
+                tabIndex={-1}
               >
-                <Download className="h-5 w-5" />
-                <span>Download from Google Play</span>
+                <Download className="h-5 w-5 flex-shrink-0" />
+                <span className="truncate block px-1 whitespace-nowrap">Download from Google Play</span>
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://f-droid.org/en/packages/com.mensinator.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full"
+                className="flex items-center gap-2 justify-center w-full min-w-0"
+                tabIndex={-1}
               >
-                <Download className="h-5 w-5" />
-                <span>Download from F-Droid</span>
+                <Download className="h-5 w-5 flex-shrink-0" />
+                <span className="truncate block px-1 whitespace-nowrap">Download from F-Droid</span>
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://apt.izzysoft.de/fdroid/index/apk/com.mensinator.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 justify-center w-full"
+                className="flex items-center gap-2 justify-center w-full min-w-0"
+                tabIndex={-1}
               >
-                <Download className="h-5 w-5" />
-                <span>Download from IzzyOnDroid</span>
+                <Download className="h-5 w-5 flex-shrink-0" />
+                <span className="truncate block px-1 whitespace-nowrap">Download from IzzyOnDroid</span>
               </a>
             </Button>
             <Button
               asChild
               size="lg"
-              className="w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full min-w-0 flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
-              <Link to="/manual" className="flex items-center gap-2 justify-center w-full">
-                <Book className="h-5 w-5" />
-                <span>Read User Manual</span>
+              <Link to="/manual" className="flex items-center gap-2 justify-center w-full min-w-0" tabIndex={-1}>
+                <Book className="h-5 w-5 flex-shrink-0" />
+                <span className="truncate block px-1 whitespace-nowrap">Read User Manual</span>
               </Link>
             </Button>
           </div>
