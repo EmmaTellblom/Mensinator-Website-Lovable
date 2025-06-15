@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -56,7 +55,7 @@ const Home = () => {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gray-100 dark:bg-slate-900 py-8">
-        <div className="container mx-auto px-4 py-8 flex flex-col items-center text-center">
+        <div className="container w-full max-w-4xl mx-auto px-2 sm:px-4 py-8 flex flex-col items-center text-center">
           <img 
             src="/lovable-uploads/c808ea61-0339-480f-bf59-06ee2f0834ce.png" 
             alt="Mensinator Logo" 
@@ -77,12 +76,12 @@ const Home = () => {
           </h2>
 
           {/* Responsive Button Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl mx-auto animate-fade-in">
-            {/* Use flex-1 and min-w to ensure equal, wide-enough buttons */}
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full">
+            {/* Each button: remove min-width and use w-full */}
             <Button 
               asChild 
               size="lg"
-              className="flex-1 min-w-[220px] w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://play.google.com/store/apps/details?id=com.mensinator.app&hl=en"
@@ -97,7 +96,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="flex-1 min-w-[220px] w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://f-droid.org/en/packages/com.mensinator.app/"
@@ -112,7 +111,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="flex-1 min-w-[220px] w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <a
                 href="https://apt.izzysoft.de/fdroid/index/apk/com.mensinator.app"
@@ -127,7 +126,7 @@ const Home = () => {
             <Button
               asChild
               size="lg"
-              className="flex-1 min-w-[220px] w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
+              className="w-full flex flex-row items-center justify-center rounded-full bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow transition-all duration-150 hover:from-slate-800 hover:to-slate-700 hover:scale-105"
             >
               <Link to="/manual" className="flex items-center gap-2 justify-center w-full">
                 <Book className="h-5 w-5" />
@@ -140,7 +139,7 @@ const Home = () => {
 
       {/* Features Section: Why Choose Mensinator? */}
       <section className="bg-gray-100 dark:bg-slate-900 pt-4 pb-8">
-        <div className="container mx-auto px-4">
+        <div className="container w-full max-w-6xl mx-auto px-2 sm:px-4">
           <h2 className="text-3xl font-bold text-center mb-6">
             Why Choose Mensinator?
           </h2>
@@ -183,13 +182,13 @@ const Home = () => {
 
       {/* Screenshot Carousel Section */}
       <section className="bg-gray-100 dark:bg-slate-900 py-8">
-        <div className="container mx-auto px-4 flex flex-col items-center">
+        <div className="container w-full max-w-4xl mx-auto px-2 sm:px-4 flex flex-col items-center">
           <h2 className="text-3xl font-bold text-center mb-6">
             App Screenshots
           </h2>
           <div className="relative flex w-full items-center justify-center gap-6">
             <Carousel
-              className="relative w-[650px] max-w-full"
+              className="relative w-full max-w-full"
               opts={{
                 loop: true,
                 align: "center",
@@ -204,7 +203,6 @@ const Home = () => {
                   let offset = idx - currentIndex;
                   if (offset > screenshots.length / 2) offset -= screenshots.length;
                   if (offset < -screenshots.length / 2) offset += screenshots.length;
-                  // Only show center and immediate left/right (peek)
                   const isCenter = offset === 0;
                   const isSide = Math.abs(offset) === 1;
                   let style: React.CSSProperties = {
@@ -212,15 +210,15 @@ const Home = () => {
                     transform: isCenter
                       ? 'scale(1.0)'
                       : isSide
-                        ? 'scale(0.92) translateY(10px)' // bigger side images
-                        : 'scale(0.75) translateY(40px)', // make distant images slightly bigger so they peek a bit
+                        ? 'scale(0.92) translateY(10px)'
+                        : 'scale(0.75) translateY(40px)',
                     opacity: isCenter ? 1 : isSide ? 0.75 : 0,
                     zIndex: isCenter ? 2 : isSide ? 1 : 0,
                   };
                   return (
                     <CarouselItem
                       key={idx}
-                      className="flex flex-col items-center basis-[64%] sm:basis-[48%]" // wider individual items
+                      className="flex flex-col items-center basis-[64%] sm:basis-[48%]"
                       style={{
                         pointerEvents: isCenter || isSide ? undefined : "none",
                         display: isCenter || isSide ? "flex" : "none",
@@ -232,22 +230,21 @@ const Home = () => {
                           alt={shot.alt}
                           className="w-full h-auto object-contain select-none rounded-xl"
                           style={{
-                            maxHeight: '580px', // taller max height
+                            maxHeight: '580px',
                             ...style,
                           }}
                           loading="lazy"
                           draggable={false}
                         />
-                        {/* Gradient overlay for side images */}
                         {isSide && (
                           <div
                             className="absolute top-0 left-0 w-full h-full pointer-events-none"
                             style={{
-                              background: `linear-gradient(${
+                              background: `${
                                 offset === -1
-                                  ? "90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.01) 40%"
-                                  : "270deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.01) 40%"
-                              })`,
+                                  ? "linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.01) 40%)"
+                                  : "linear-gradient(270deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.01) 40%)"
+                              }`,
                               mixBlendMode: "lighten"
                             }}
                           />
@@ -266,7 +263,7 @@ const Home = () => {
 
       {/* Open Source & Community Section */}
       <section className="py-8 bg-muted">
-        <div className="container mx-auto px-4">
+        <div className="container w-full max-w-6xl mx-auto px-2 sm:px-4">
           <div className="flex flex-col gap-12 md:flex-row md:gap-16 items-start justify-center text-left">
             {/* Open Source Block */}
             <div className="flex-1 min-w-[260px] md:pr-8">
@@ -326,4 +323,3 @@ const Home = () => {
 };
 
 export default Home;
-
