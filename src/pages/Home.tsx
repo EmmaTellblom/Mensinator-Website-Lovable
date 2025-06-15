@@ -90,7 +90,7 @@ const Home = () => {
                 tabIndex={-1}
               >
                 <Download className="h-5 w-5 flex-shrink-0" />
-                <span className="block px-1 text-center">Get it Google Play</span>
+                <span className="block px-1 text-center">Get it from Google Play</span>
               </a>
             </Button>
             <Button
@@ -106,7 +106,7 @@ const Home = () => {
                 tabIndex={-1}
               >
                 <Download className="h-5 w-5 flex-shrink-0" />
-                <span className="block px-1 text-center">Get it F-Droid</span>
+                <span className="block px-1 text-center">Get it from F-Droid</span>
               </a>
             </Button>
             <Button
@@ -122,7 +122,7 @@ const Home = () => {
                 tabIndex={-1}
               >
                 <Download className="h-5 w-5 flex-shrink-0" />
-                <span className="block px-1 text-center">Get it IzzyOnDroid</span>
+                <span className="block px-1 text-center">Get it from IzzyOnDroid</span>
               </a>
             </Button>
             <Button
